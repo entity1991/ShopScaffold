@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c842b4d-c8dc-4151-bac4-6cd19e77a681" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
     </list>
     <ignored path="ShopScaffold.iws" />
@@ -47,7 +45,7 @@
       <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="10" selection-start="151" selection-end="151" vertical-scroll-proportion="0.3090909">
+            <state line="6" column="7" selection-start="147" selection-end="147" vertical-scroll-proportion="0.26493508">
               <folding />
             </state>
           </provider>
@@ -403,7 +401,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="151" selection-end="151" vertical-scroll-proportion="0.3090909">
+        <state line="6" column="7" selection-start="147" selection-end="147" vertical-scroll-proportion="0.26493508">
           <folding />
         </state>
       </provider>
