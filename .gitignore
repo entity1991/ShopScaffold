@@ -1,0 +1,11 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+.bundle
+db/*.sqlite3*
+log/*.log
+*.log
+/tmp/
+doc/
+*.swp
+*~
+.project
+.DS_Store
