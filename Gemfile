@@ -3,13 +3,11 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'mysql'
 gem 'activerecord-postgresql-adapter' #it needs to doesnt make mistakess in DB in Production Environment
-
 gem 'gravatar_image_tag', '1.0.0.pre2'
 #gem 'will_paginate', '3.0.pre2'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
-  gem 'annotate', '2.4.0'
   gem 'faker', '0.3.1'
 end
 
