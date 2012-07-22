@@ -1,10 +1,9 @@
 ShopScaffold::Application.routes.draw do
-  get "pages/home"
-  get "pages/help"
-  get "pages/contact"
-  get "pages/tanja"
-  get "pages/about"
-
+  root :to => 'pages#home'
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  match '/help',    :to => 'pages#help'
+  match '/signup',  :to => 'users#new'
   resources :articles
 
   resources :users
