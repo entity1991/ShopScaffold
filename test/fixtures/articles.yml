@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  filler_id: 1
+  price: 
+
+two:
+  name: MyString
+  description: MyString
+  filler_id: 1
+  price: 

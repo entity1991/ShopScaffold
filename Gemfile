@@ -2,21 +2,23 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'mysql'
-gem 'activerecord-postgresql-adapter'
+gem 'activerecord-postgresql-adapter' #it needs to doesnt make mistakess in DB in Production Environment
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+gem 'gravatar_image_tag', '1.0.0.pre2'
+#gem 'will_paginate', '3.0.pre2'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+group :development do
+  gem 'rspec-rails', '2.6.1'
+  gem 'annotate', '2.4.0'
+  gem 'faker', '0.3.1'
 end
 
-gem 'jquery-rails'
+group :test do
+  gem 'rspec-rails', '2.6.1'
+  gem 'webrat', '0.7.1'
+  gem 'spork', '0.9.0.rc8'
+  gem 'factory_girl_rails', '1.0'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
