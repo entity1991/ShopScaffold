@@ -57,8 +57,7 @@ class UsersController < ApplicationController
 
   def access_for_create_user
      if signed_in?
-       #flash[:notice] = store_location
-       redirect_back_or current_user
+       redirect_back_or root_path
      end
   end
 
