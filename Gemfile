@@ -5,6 +5,7 @@ gem 'rails', '3.2.6'
 gem 'mysql'
 gem 'activerecord-postgresql-adapter' #it needs to doesnt make mistakess in DB in Production Environment
 gem 'gravatar_image_tag', '1.0.0.pre2'
+#gem 'foreigner'   #only for MySQL2
 #gem 'will_paginate', '3.0.pre2'
 
 group :development do

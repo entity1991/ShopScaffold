@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :articles
   attr_accessor :password #only virtual attribute(getter and setter)
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation  #editable attribute
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
