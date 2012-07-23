@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-rails'
 gem 'rails', '3.2.6'
 gem 'mysql'
 gem 'activerecord-postgresql-adapter' #it needs to doesnt make mistakess in DB in Production Environment

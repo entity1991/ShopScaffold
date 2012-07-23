@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate, :only => [:index, :edit, :update]
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
+  before_filter :access_for_create_user,       :only => [:new, :create]
 
   def index
     @title = "All users"
@@ -53,6 +54,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def access_for_create_user
+     if signed_in?
+       #flash[:notice] = store_location
+       redirect_back_or current_user
+     end
+  end
 
   def authenticate
     deny_access unless signed_in?

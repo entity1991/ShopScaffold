@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     encrypted_password == encrypt(submitted_password)
   end
 
+  def admin?
+    self.flag == 2
+  end
+
   def self.authenticate(email, submitted_password)
     user = find_by_email(email)
     return nil  if user.nil?
@@ -46,7 +50,7 @@ class User < ActiveRecord::Base
     secure_hash("#{Time.now.utc}--#{password}")
   end
 
-  def secure_hash(pass)
+  def secure_hash(pass)         []
     Digest::SHA2.hexdigest(pass)
   end
 end
