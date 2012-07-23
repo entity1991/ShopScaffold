@@ -7,6 +7,8 @@ gem 'activerecord-postgresql-adapter' #it needs to doesnt make mistakess in DB i
 gem 'gravatar_image_tag', '1.0.0.pre2'
 
 group :assets do
+  gem 'therubyracer'
+  gem 'coffee-rails'
   gem 'uglifier'
 end
 #gem 'foreigner'   #only for MySQL2
