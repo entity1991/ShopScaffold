@@ -25,5 +25,5 @@ production:
   database: shop_scaffold_production
   pool: 5
   username: root
-  password:
+  password: 1111
   host: localhost
