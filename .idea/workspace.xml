@@ -2,104 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c842b4d-c8dc-4151-bac4-6cd19e77a681" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/2co.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/add_to_cart.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/carousel_bg_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/carousel_download_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/carousel_next_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/carousel_pause_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/carousel_play_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/carousel_previous_bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/detail.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/more_but.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/paypal.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/07.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/08.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/09.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/product/10_l.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/slider/01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/slider/02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/slider/03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_body.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_image_01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_list.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_menu.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_menu_hover.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_middle.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_sidebar_bottom.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/templatemo_sidebar_header.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/jquery.dualSlider.0.2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/templatemo_style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/articles/_article.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_sidebar.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/shared/_article_form.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/shared/_user_info.erb" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\javascripts\articles.js.coffee" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\javascripts\pages.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\javascripts\session.js" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\javascripts\users.js.coffee" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\ie.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\buttons\icons\cross.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\buttons\icons\key.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\buttons\icons\tick.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\buttons\readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\buttons\screen.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\fancy-type\readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\fancy-type\screen.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\icons\doc.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\icons\email.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\icons\external.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\icons\feed.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\icons\im.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\icons\lock.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\icons\pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\icons\visited.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\icons\xls.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\link-icons\screen.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\rtl\readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\plugins\rtl\screen.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\print.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\screen.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\src\forms.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\src\grid.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\src\grid.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\src\ie.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\src\print.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\src\reset.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\blueprint\src\typography.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\default.css" afterPath="" />
-      <change type="DELETED" beforePath="E:\Work\Sites\ShopScaffold\app\assets\stylesheets\scaffolds.css.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rdoc" afterPath="$PROJECT_DIR$/README.rdoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/articles_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/articles_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/article.rb" afterPath="$PROJECT_DIR$/app/models/article.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/articles/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/articles/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/articles/index.html.erb" afterPath="$PROJECT_DIR$/app/views/articles/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_footer.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_styles_&amp;_scripts.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_styles_&amp;_scripts.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/sample_data.rake" afterPath="$PROJECT_DIR$/lib/tasks/sample_data.rake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
     </list>
     <ignored path="ShopScaffold.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,10 +33,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_sidebar.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_sidebar.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_sidebar.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="12" selection-start="2111" selection-end="2111" vertical-scroll-proportion="1.6904315">
+            <state line="17" column="83" selection-start="872" selection-end="872" vertical-scroll-proportion="-11.115385">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="49" selection-start="323" selection-end="323" vertical-scroll-proportion="0.3649374">
               <folding />
             </state>
           </provider>
@@ -232,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/shared/_micropost_form.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_user_info.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_article_form.erb" />
         <option value="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
@@ -248,6 +159,7 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/templatemo_style.css" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_sidebar.erb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -1380,7 +1292,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_sidebar.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="12" selection-start="2111" selection-end="2111" vertical-scroll-proportion="1.6904315">
+        <state line="17" column="83" selection-start="872" selection-end="872" vertical-scroll-proportion="-11.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="49" selection-start="323" selection-end="323" vertical-scroll-proportion="0.3649374">
           <folding />
         </state>
       </provider>
