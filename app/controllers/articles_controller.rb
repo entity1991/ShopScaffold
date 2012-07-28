@@ -1,17 +1,15 @@
 class ArticlesController < ApplicationController
-  # GET /articles
-  # GET /articles.json
+  before_filter :authenticate, :only => [:create, :destroy]
+  before_filter :authorized_user, :only => :destroy
+
   def index
     @articles = Article.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @articles }
     end
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
 
@@ -21,8 +19,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /articles/new
-  # GET /articles/new.json
   def new
     @article = Article.new
 
@@ -32,29 +28,20 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
   end
 
-  # POST /articles
-  # POST /articles.json
   def create
-    @article = Article.new(params[:article])
-
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, :notice => 'Article was successfully created.' }
-        format.json { render :json => @article, :status => :created, :location => @article }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @article.errors, :status => :unprocessable_entity }
-      end
+    @article  = current_user.articles.build(params[:article])
+    if @article.save
+      flash[:success] = "Article created!"
+      redirect_to root_path
+    else
+      render 'pages/home'
     end
   end
 
-  # PUT /articles/1
-  # PUT /articles/1.json
   def update
     @article = Article.find(params[:id])
 
@@ -69,15 +56,15 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
-  # DELETE /articles/1.json
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
+    redirect_back_or root_path
+  end
 
-    respond_to do |format|
-      format.html { redirect_to articles_url }
-      format.json { head :no_content }
-    end
+  private
+
+  def authorized_user
+    @article = current_user.articles.find_by_id(params[:id])
+    redirect_to root_path if @article.nil?
   end
 end

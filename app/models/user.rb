@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :articles
+  has_many :articles#, :dependent => :destroy
   attr_accessor :password #only virtual attribute(getter and setter)
   attr_accessible :name, :email, :password, :password_confirmation  #editable attribute
 

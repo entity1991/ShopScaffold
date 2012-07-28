@@ -7,14 +7,16 @@
   <%= javascript_include_tag "application" %>
 </head>
 <body>
-<div class="container">
+<div id="wrapper">
   <%= render 'layouts/header' %>
-  <section class="round">
+  <div id="main">
     <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
     <% end %>
+    <%= render 'layouts/sidebar' %>
     <%= yield %>
-  </section>
+  </div>
+  <div class="cleaner"></div>
   <%= render 'layouts/footer' %>
 </div>
 <%= debug(params) if Rails.env.development? %>
