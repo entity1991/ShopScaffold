@@ -13,4 +13,5 @@ module ApplicationHelper
   def logo
     image_tag("templatemo_logo.png", :alt => "Logo")
   end
+
 end

@@ -1,16 +1,19 @@
 ShopScaffold::Application.routes.draw do
 
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :articles
+  resources :users
+
+  post '/users/change_role'
+
   root :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   match '/signup',  :to => 'users#new'
+  match '/settings/:id', :to => 'users#edit'            #don't work
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
-
-  resources :sessions, :only => [:new, :create, :destroy]
-  resources :articles
-  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

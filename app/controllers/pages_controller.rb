@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
+
   def home
-    if signed_in?
-      @article = Article.new
-    end
     @title = "Home"
   end
 

@@ -1,0 +1,98 @@
+.menu{
+  ul{
+    z-index:100;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li{
+      position: relative;
+      display: inline;
+      float: left;
+      a {
+        display: block;
+        padding: 0 30px;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 1px;
+        font-size: 12px;
+        color: #ccc;
+        text-decoration: none;
+        outline: none;
+        text-align: center;
+      }
+      a.selected, a:hover {
+        color: #fff;
+        background: url(templatemo_menu_hover.jpg) repeat-x
+      }
+      ul {
+        position: absolute;
+        left: 0;
+        padding: 10px 0 0;
+        display: none; /*collapse all sub menus to begin with*/
+        visibility: hidden;
+        background: #313131;
+        border-bottom: 4px solid #000;
+        li{
+          display: list-item;
+          float: none;
+          ul{
+            top: 0;
+          }
+          a{
+            font-weight: 400;
+            width: 130px; /*width of sub menus*/
+            height: 30px;
+            padding: 0 30px;
+            line-height: 30px;
+            font-size: 11px;
+            text-align: left;
+            background: none;
+            color: #ccc;
+            border-bottom: 1px solid #444;
+            border-top: 1px solid #222;
+          }
+          a.selected, a:hover {
+            color: #fff;
+            font-weight: 700;
+            background: #222;
+          }
+        }
+      }
+    }
+  }
+}
+
+* html .menu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+  display: inline-block;
+}
+/* Holly Hack for IE \*/
+* html .menu{height: 1%;} /*Holly Hack for IE7 and below*/
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+  position: absolute;
+  top: 12px;
+  right: 7px;
+}
+
+.rightarrowclass{
+  position: absolute;
+  top: 6px;
+  right: 5px;
+}
+
+/* ######### CSS for shadow added to sub menus  ######### */
+
+.ddshadow{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+.toplevelshadow{ /*shadow opacity. Doesn't work in IE*/
+  opacity: 0.5;
+}

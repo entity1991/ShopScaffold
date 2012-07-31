@@ -5,7 +5,14 @@ gem 'rails'
 gem 'mysql'
 gem 'activerecord-postgresql-adapter' #it needs to doesn't make mistakes in DB in Production Environment
 gem 'gravatar_image_tag', '1.0.0.pre2'
-gem 'heroku'
+gem 'annotate', '~> 2.4.1.beta'
+
+group :assets do
+  gem 'sass-rails',   '~> 3.2.5'
+  gem 'coffee-rails', '~> 3.2.2'
+  gem 'uglifier', '>= 1.2.4'
+  gem 'bootstrap-sass', '2.0.2'
+end
 
 #gem 'foreigner'   #only for MySQL2
 #gem 'will_paginate', '3.0.pre2'

@@ -1,9 +1,7 @@
-<div id="header">
+<div id="header" xmlns="http://www.w3.org/1999/html">
   <%= link_to logo, root_path, :id => "logo"%>
   <nav id="header_right">
-      <%= link_to "Home", root_path %> |
       <% if signed_in? %>
-          <%= link_to "Users", users_path %> |
           <%= link_to "Profile", current_user %> |
           <%= link_to "Settings", edit_user_path(current_user) %> |
       <% end %>
@@ -11,7 +9,8 @@
       <% if signed_in? %>
           <%= link_to "Sign out", signout_path, :method => :delete %>
       <% else %>
-          <%= link_to "Sign in", signin_path %>
+          <%= link_to_function "Sign in", "toggleSigninWindow()"%> or <%= link_to "Sign up", signup_path %>
+          <%= render 'shared/signin_window'  %>
       <% end %>
   </nav>
 </div>
@@ -21,14 +20,12 @@
 <div id="wp-menu">
   <div class="menu">
     <ul>
-      <li><a href="#" class="selected">Home</a></li>
-      <li><a href="#">Menu 2</a>
-        <ul>
-          <li><a href="#">Sub menu 1</a></li>
-          <li><a href="#">Sub menu 2</a></li>
-          <li><a href="#">Sub menu 3</a></li>
-        </ul>
-      </li>
+      <li><%= link_to "Home", root_path %></li>
+      <% if signed_in? && current_user.boss?%>
+        <li>
+          <%= link_to "Users (#{users.count if users})", users_path, :id => "users_count" %>
+        </li>
+      <% end %>
       <li><a href="#">Menu 3</a>
         <ul>
           <li><a href="#">Sub menu 1</a></li>

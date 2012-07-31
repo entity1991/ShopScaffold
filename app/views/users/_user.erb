@@ -1,7 +1,19 @@
-<li>
-  <%= logo %>
-  <%= link_to user.name, user %>
-  <% if current_user.admin?  && !user.admin?%>
-      | <%= link_to "delete", user, :method => :delete, :confirm => "Are you sure?", :title => "Delete #{user.name}" %>
-  <% end %>
-</li>
+<tr id="<%=user.id%>" class="user_row">
+  <td class="user_name">
+    <%= link_to user.name, user %>
+  </td>
+  <td class="change_role">
+    <% if signed_in? && current_user.boss? && !user.boss?%>
+      <%= form_for(user, :url => {:controller => 'users', :action => 'change_role'}, :html => { :method => 'post'},
+                   :remote => true) do |f|%>
+        <%= f.hidden_field :id, :value => user.id%>
+        <%= f.select :role, options_for_select(@roles, user.role)%>
+        <%= f.submit "OK", :class => "submit_as_text"%>
+      <% end %>
+    </td>
+    <td class="delete">
+      <%= link_to "X", user, :method => :delete, :remote => true, :confirm => "Are you sure?",
+                  :title => "Delete #{user.name}"%>
+    <% end %>
+  </td>
+</tr>

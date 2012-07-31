@@ -13,3 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree
+
+j = jQuery.noConflict();
+
+//Here is triggers
+j(document).ready(
+
+);
+
+//Here started functions
+
+function toggleSigninWindow(){
+    j("#signinWindow").toggle();
+}

@@ -4,17 +4,18 @@
   <title><%= title %></title>
   <%= csrf_meta_tag %>
   <%= render 'layouts/styles_&_scripts' %>
-  <%= javascript_include_tag "application" %>
 </head>
 <body>
 <div id="wrapper">
-  <%= render 'layouts/header' %>
+  <%= render 'layouts/header'%>
   <div id="main">
+    <%= render 'layouts/sidebar' %>
     <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
     <% end %>
-    <%= render 'layouts/sidebar' %>
-    <%= yield %>
+    <div id="content">
+        <%= yield %>
+    </div>
   </div>
   <div class="cleaner"></div>
   <%= render 'layouts/footer' %>
