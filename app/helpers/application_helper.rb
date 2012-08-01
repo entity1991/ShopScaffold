@@ -14,4 +14,8 @@ module ApplicationHelper
     image_tag("templatemo_logo.png", :alt => "Logo")
   end
 
+  def rails
+    image_tag("rails.png", :alt => "ava")
+  end
+
 end

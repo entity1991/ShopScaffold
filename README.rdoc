@@ -45,3 +45,5 @@ home page
 link to admin
 
 custom validation message
+
+class="<%= cycle('list_line_odd', 'list_line_even') %>"

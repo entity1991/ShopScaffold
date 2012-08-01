@@ -36,9 +36,9 @@ class ArticlesController < ApplicationController
     @article  = current_user.articles.build(params[:article])
     if @article.save
       flash[:success] = "Article created!"
-      redirect_to root_path
+      redirect_to articles_path
     else
-      render 'pages/home'
+      render 'new'
     end
   end
 

@@ -4,7 +4,7 @@
 <h1>Your Pragmatic Catalog</h1>
 <% @articles.each do |article| %>
     <div class="entry">
-      <%= image_tag(logo) %>
+      <%= rails %>
       <h3><%= article.title %></h3>
       <%= sanitize(article.description) %>
       <div class="price_line">
