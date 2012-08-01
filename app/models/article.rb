@@ -13,11 +13,27 @@
 
 class Article < ActiveRecord::Base
   belongs_to :user
+  has_many :line_items
+  before_destroy :is_line_items?
+
   attr_accessible :description, :title, :price
 
-  validates :title, :presence => true, :length => { :maximum => 50 }
+  validates :title, :presence => true, :length => { :maximum => 50 }, :uniqueness => true
+  validates :description, :presence => true, :length => { :maximum => 500 }
   validates :user_id, :presence => true
-  validates :price, :presence => true, numericality: true
+  validates :price, :presence => true, :numericality => {greater_than_or_equal_to: 0.01}
 
   default_scope :order => 'articles.created_at DESC'
+
+  private
+
+  # ensure that there are no line items referencing this product
+  def is_line_items?
+    if line_items.empty?
+      return true
+    else
+      errors.add(:base, 'Line Items present')
+      return false
+    end
+  end
 end

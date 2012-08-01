@@ -1,5 +1,11 @@
 ShopScaffold::Application.routes.draw do
 
+  resources :line_items
+
+  resources :carts
+
+  get "store/index"
+
   resources :sessions, :only => [:new, :create, :destroy]
   resources :articles
   resources :users

@@ -1,8 +1,18 @@
-<tr>
-  <td class="micropost">
-    <span class="content"><%= article.description %></span>
-    <span class="timestamp">
-      Posted <%= time_ago_in_words(article.created_at) %> ago.
-    </span>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <td>
+    <%= image_tag(logo) %>
+  </td>
+  <td class="list_description">
+    <dl>
+      <dt><%= article.title %></dt>
+      <dd><%= truncate(strip_tags(article.description),
+                       length: 80) %></dd>
+    </dl>
+  </td>
+  Posted <%= time_ago_in_words(article.created_at) %> ago.
+  <td class="list_actions">
+    <%= link_to 'Show', article %>
+    <%= link_to 'Edit', edit_article_path(article) %>
+    <%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %>
   </td>
 </tr>
