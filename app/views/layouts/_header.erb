@@ -1,9 +1,10 @@
 <div id="header" xmlns="http://www.w3.org/1999/html">
   <%= link_to logo, root_path, :id => "logo"%>
   <nav id="header_right">
+      <%= Time.now %> |
       <% if signed_in? %>
-          <%= link_to "Profile", current_user %> |
-          <%= link_to "Settings", edit_user_path(current_user) %> |
+        <%= link_to "Profile", current_user %> |
+        <%= link_to "Settings", edit_user_path(current_user) %> |
       <% end %>
       <%= link_to "Help", help_path %> |
       <% if signed_in? %>

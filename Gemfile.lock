@@ -152,6 +152,7 @@ DEPENDENCIES
   gravatar_image_tag (= 1.0.0.pre2)
   jquery-rails
   mysql
+  pg
   rails
   rspec-rails (= 2.6.1)
   sass-rails (~> 3.2.5)
