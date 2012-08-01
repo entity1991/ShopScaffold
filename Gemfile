@@ -6,6 +6,7 @@ gem 'mysql'
 gem 'activerecord-postgresql-adapter' #it needs to doesn't make mistakes in DB in Production Environment
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'annotate', '~> 2.4.1.beta'
+gem 'heroku'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
