@@ -1,10 +1,12 @@
 ShopScaffold::Application.routes.draw do
 
+  resources :orders
+
   resources :line_items
 
   resources :carts
 
-  get "store/index"
+  get "store/index", as: "store"
 
   resources :sessions, :only => [:new, :create, :destroy]
   resources :articles

@@ -1,6 +1,3 @@
-<% if notice %>
-    <p id="notice"><%= notice %></p>
-<% end %>
 <h1>Your Pragmatic Catalog</h1>
 <% @articles.each do |article| %>
     <div class="entry">
@@ -9,7 +6,7 @@
       <%= sanitize(article.description) %>
       <div class="price_line">
         <span class="price"><%= sprintf("$%0.02f", article.price) %></span>
-        <%= button_to 'Add to Cart', line_items_path(article_id: article.id) %>
+        <%= button_to 'Add to Cart', line_items_path(article_id: article.id), remote: true %>
       </div>
     </div>
 <% end %>

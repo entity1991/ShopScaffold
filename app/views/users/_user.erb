@@ -7,7 +7,7 @@
       <%= form_for(user, :url => {:controller => 'users', :action => 'change_role'}, :html => { :method => 'post'},
                    :remote => true) do |f|%>
         <%= f.hidden_field :id, :value => user.id%>
-        <%= f.select :role, options_for_select(@roles, user.role)%>
+        <%= f.select :role, options_for_select(User::ROLES, user.role)%>
         <%= f.submit "OK", :class => "submit_as_text"%>
       <% end %>
     </td>

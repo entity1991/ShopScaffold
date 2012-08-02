@@ -14,6 +14,7 @@
 class Article < ActiveRecord::Base
   belongs_to :user
   has_many :line_items
+  has_many :orders, through: :line_items
   before_destroy :is_line_items?
 
   attr_accessible :description, :title, :price

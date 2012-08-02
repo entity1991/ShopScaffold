@@ -41,11 +41,11 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     article = Article.find(params[:article_id])
-    @line_item = @cart.line_items.build(article_id: article.id)
-
+    @line_item = @cart.add_article(article.id)
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
+        format.html { redirect_to store_path }
+        format.js {  @current_item = @line_item}
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
         format.html { render action: "new" }

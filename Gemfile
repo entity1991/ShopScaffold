@@ -16,7 +16,7 @@ group :assets do
 end
 
 #gem 'foreigner'   #only for MySQL2
-#gem 'will_paginate', '3.0.pre2'
+gem 'will_paginate', '~> 3.0.pre2'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

@@ -13,6 +13,8 @@
 #
 
 class User < ActiveRecord::Base
+  ROLES =  %w(Admin Filler Customer)
+
   has_many :articles#, :dependent => :destroy
   attr_accessor :password #only virtual attribute(getter and setter)
   attr_accessible :name, :email, :password, :password_confirmation  #editable attribute
@@ -27,6 +29,7 @@ class User < ActiveRecord::Base
   validates :password, :presence     => true,
             :confirmation => true,
             :length       => { :within => 6..40 }
+  validates :role, inclusion: ROLES
 
   before_save :encrypt_password
 

@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
+
   before_filter :authenticate, :only => [:index, :edit, :update]
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :boss_user,   :only => [:destroy, :change_role]
   before_filter :access_for_create_user,       :only => [:new, :create]
   def index
     @title = "All users"
-    @users = User.all
-    @roles = %w(Admin Filler Customer)
+    @users = User.paginate page: params[:page], order: 'created_at desc', per_page: 10
   end
 
   def show

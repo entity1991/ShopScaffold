@@ -47,3 +47,27 @@ link to admin
 custom validation message
 
 class="<%= cycle('list_line_odd', 'list_line_even') %>"
+
+• Add the ability to delete individual line items from the cart. This will require
+buttons on each line, and such buttons will need to be linked to
+the destroy() action in the LineItemsController.
+
+global variable in view page
+
+rendering js.erb in controller
+
+Add a button next to each item in the cart. When clicked, it should invoke
+an action to decrement the quantity of the item, deleting it from the cart
+when the quantity reaches zero. Get it working without using Ajax first,
+and then add the Ajax goodness.
+
+legend and fieldset
+
+select promt
+
+Playtime
+• Add a ship_date column to the orders table, and send a notification when
+this value is updated by the OrdersController.
+• Update the application to send an email to the system administrator,
+namely, yourself, when there is an application failure such as the one we
+handled in Section 10.2, Iteration E2: Handling Errors, on page 119.
