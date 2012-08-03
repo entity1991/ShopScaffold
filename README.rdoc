@@ -71,3 +71,9 @@ this value is updated by the OrdersController.
 • Update the application to send an email to the system administrator,
 namely, yourself, when there is an application failure such as the one we
 handled in Section 10.2, Iteration E2: Handling Errors, on page 119.
+
+has_secure_password
+
+gem 'redcloth'
+
+person - people

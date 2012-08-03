@@ -7,6 +7,7 @@ gem 'activerecord-postgresql-adapter' #it needs to doesn't make mistakes in DB i
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'annotate', '~> 2.4.1.beta'
 gem 'heroku'
+gem 'i18n'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'

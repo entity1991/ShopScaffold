@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   before_filter :access_for_create_user,       :only => [:new, :create]
   def index
     @title = "All users"
-    @users = User.paginate page: params[:page], order: 'created_at desc', per_page: 10
+    @users = User.paginate( page: params[:page], order: 'name', per_page: 4)
   end
 
   def show
