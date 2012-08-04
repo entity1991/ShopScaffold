@@ -1,5 +1,10 @@
 <div id="header" xmlns="http://www.w3.org/1999/html">
   <%= link_to logo, root_path, :id => "logo"%>
+  <%= form_tag store_path, class: 'locale' do %>
+      <%= select_tag :set_locale, options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
+      <%= submit_tag 'submit' %>
+      <%= javascript_tag "j('.locale input').hide()" %>
+  <% end %>
   <nav id="header_right">
       <%= Time.now %> |
       <% if signed_in? %>

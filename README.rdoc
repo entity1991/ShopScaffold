@@ -77,3 +77,20 @@ has_secure_password
 gem 'redcloth'
 
 person - people
+
+sublocations in locations
+
+Add a locale column to the products database, and adjust the index view
+to select only the products that match the locale. Adjust the products
+view so that you can view, enter, and alter this new column. Enter a few
+products in each locale, and test the resulting application.
+• Determine the current exchange rate between U.S. dollars and euros, and
+localize the currency display to display euros when ES_es is selected.
+• Translate the Order::PAYMENT_TYPES shown in the drop-down. You will need
+to keep the option value (which is sent to the server) the same. Only
+change what is displayed.
+
+offset(), joins(), group(), lock(), readonly()
+
+
+

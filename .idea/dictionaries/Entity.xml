@@ -2,6 +2,7 @@
   <dictionary name="Entity">
     <words>
       <w>signin</w>
+      <w>пользователи</w>
     </words>
   </dictionary>
 </component>

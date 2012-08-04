@@ -12,7 +12,6 @@ gem 'i18n'
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
-  gem 'uglifier', '>= 1.2.4'
   gem 'bootstrap-sass', '2.0.2'
 end
 
@@ -33,6 +32,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'uglifier'
 end
 
 # To use ActiveModel has_secure_password
