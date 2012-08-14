@@ -11,8 +11,6 @@ Micropost.where("user_id = ?", id)
 
 (сложное) Добавить JavaScript отображение к Home странице для обратного отсчета 140 знаков.
 
-Сделать рефакторинг Home страницы чтобы использовать отдельные партиалы для двух ветвей выражения if-else.
-
 Добавить вложенные маршруты так, чтобы по адресу /users/1/microposts показывались все микросообщения пользователя 1.
 (Вам также необходимо будет добавить в контроллер Microposts действие index и соответствующее представление.)
 
@@ -40,8 +38,6 @@ coffee
 
 /*Top level list items*/ - which commment
 
-home page
-
 link to admin
 
 custom validation message
@@ -53,8 +49,6 @@ buttons on each line, and such buttons will need to be linked to
 the destroy() action in the LineItemsController.
 
 global variable in view page
-
-rendering js.erb in controller
 
 Add a button next to each item in the cart. When clicked, it should invoke
 an action to decrement the quantity of the item, deleting it from the cart
@@ -75,8 +69,6 @@ handled in Section 10.2, Iteration E2: Handling Errors, on page 119.
 has_secure_password
 
 gem 'redcloth'
-
-person - people
 
 sublocations in locations
 

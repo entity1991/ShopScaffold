@@ -8,7 +8,8 @@ ShopScaffold::Application.routes.draw do
     resources :users
     post '/users/change_role'
     get "store/index", as: "store"
-    post "store/index", as: "store"
+    post "/shallow/change_locale", as: "locale"
+    get "/shallow/search", as: "search"
     root :to => 'pages#home'
     match '/contact', :to => 'pages#contact'
     match '/about',   :to => 'pages#about'

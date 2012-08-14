@@ -1,49 +1,46 @@
 <div id="header">
   <%= link_to logo, root_path, :id => "logo"%>
   <div style="float: right;">
-      <%= form_tag store_path, class: 'locale' do %>
+      <%= form_tag locale_path, class: 'locale' do %>
           <%= select_tag :set_locale, options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
           <%= submit_tag 'submit' %>
           <%= javascript_tag "j('.locale input').hide()" %>
       <% end %>
       <div class="cleaner"></div>
       <nav id="header_right">
-          <%= Time.now %> |
           <% if signed_in? %>
-            <%= link_to "Profile", current_user %> |
-            <%= link_to "Settings", edit_user_path(current_user) %> |
+            <%= link_to t('Profile'), current_user %> |
+            <%= link_to t('Settings'), edit_user_path(current_user) %> |
           <% end %>
-          <%= link_to "Help", help_path %> |
+          <%= link_to t('Help'), help_path %> |
           <% if signed_in? %>
-              <%= link_to "Sign out", signout_path, :method => :delete %>
+              <%= link_to t('Sign_out'), signout_path, :method => :delete %>
           <% else %>
-              <%= link_to_function "Sign in", "toggleSigninWindow()"%> or <%= link_to "Sign up", signup_path %>
-              <%= render 'shared/signin_window'  %>
+              <%= link_to_function t('Sign_in'), "toggleSigninWindow()"%> <%= t('or') %> <%= link_to t('Sign_up'), signup_path %>
           <% end %>
       </nav>
   </div>
 </div>
 
 <div class="cleaner"></div>
+<%= render 'shared/signin_window'  %>
+
+<div class="cleaner"></div>
 <br>
 <div id="wp-menu">
   <div class="menu">
     <ul>
-      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to t('Home'), root_path %></li>
       <% if signed_in? && current_user.boss?%>
         <li>
           <%= link_to "Users (#{users.count if users})", users_path, :id => "users_count" %>
+          <ul>
+            <% User::ROLES.each do |role| %>
+                <li><%= link_to role+"s ("+some_users('role', role).count.to_s+")" , users_path(role: role) %></li>
+            <% end %>
+          </ul>
         </li>
       <% end %>
-      <li><a href="#">Menu 3</a>
-        <ul>
-          <li><a href="#">Sub menu 1</a></li>
-          <li><a href="#">Sub menu 2</a></li>
-          <li><a href="#">Sub menu 3</a></li>
-          <li><a href="#">Sub menu 4</a></li>
-          <li><a href="#">Sub menu 5</a></li>
-        </ul>
-      </li>
       <% if signed_in? && !current_user.customer?%>
           <li>
             <%= link_to "Articles", articles_path %>
@@ -62,10 +59,10 @@
       Shopping Cart: <strong>3 Products</strong> ( <a href="#">Show Cart</a> )
     </div>
     <div id="search">
-      <form action="#" method="get">
-        <input type="text" value="Search" name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-        <input type="submit" name="Search" value=" Search " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
-      </form>
+      <%= form_tag search_form_action, method: "get" do %>
+        <%= text_field_tag :search, "", class: "text_field"%>
+        <%= submit_tag 'submit', class: "submit_button", value: t('Search') + " #{search_form_label}" %>
+      <% end %>
     </div>
     <div class="cleaner"></div>
   </div>

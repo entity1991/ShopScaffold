@@ -1,9 +1,6 @@
 class StoreController < ApplicationController
   def index
-    if params[:set_locale]
-      redirect_to users_path(locale: params[:set_locale])
-    else
-      @articles = Article.order(:title)
-    end
+    @articles = Article.order(:title)
+    @articles = @articles.where("title LIKE ? OR description LIKE ?", "%#{params[:search]}%",  "%#{params[:search]}%") if params[:search]
   end
 end

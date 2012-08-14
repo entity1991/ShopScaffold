@@ -19,7 +19,13 @@ j = jQuery.noConflict();
 
 //Here is triggers
 j(document).ready(
-
+    function(){
+        j(".menu ul li").hover(
+            function(){
+                j(this).find("ul").toggle();
+            }
+        )
+    }
 );
 
 //Here started functions

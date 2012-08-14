@@ -18,4 +18,12 @@ module ApplicationHelper
     image_tag("rails.png", :alt => "ava")
   end
 
+  def search_form_action
+    params[:controller] == "users" ? users_path : store_path
+  end
+
+  def search_form_label
+    params[:controller] == "users" ? "users" : "articles"
+  end
+
 end

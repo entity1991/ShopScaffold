@@ -7,7 +7,9 @@ class UsersController < ApplicationController
 
   def index
     @title = "All users"
-    @users = User.paginate( page: params[:page], order: 'name', per_page: 20)
+    @users = User.paginate(page: params[:page], order: 'name', per_page: 20)
+    @users = @users.where("role = ?", params[:role]) if params[:role]
+    @users = @users.where("name LIKE ?", "%#{params[:search]}%") if params[:search]
   end
 
   def show
@@ -65,7 +67,7 @@ class UsersController < ApplicationController
     user = User.find params[:user][:id]
     user.update_attribute :role, params[:user][:role]
     respond_to do |format|
-      format.html { redirect_to users_path }
+      format.html { redirect_to :back }
       format.js { }
     end
   end
