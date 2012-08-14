@@ -1,4 +1,5 @@
 <h1><%= t('All_users')%></h1>
+<%= will_paginate @users%>
 <table id="user_list">
   <% @users.each do |user| %>
       <%= render user %>

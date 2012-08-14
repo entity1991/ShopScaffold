@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_filter :set_i18n_locale_from_params
+  before_filter :cart
 
   protect_from_forgery
 
@@ -8,8 +9,12 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def cart
+    @cart = current_cart
+  end
+
   def current_cart
-    Cart.find(session[:cart_id])
+    signed_in? ? current_user.cart : Cart.find(session[:cart_id])
   rescue ActiveRecord::RecordNotFound
     cart = Cart.create
     session[:cart_id] = cart.id

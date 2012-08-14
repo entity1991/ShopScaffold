@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   ROLES =  %w(Admin Filler Customer)
 
   has_many :articles#, :dependent => :destroy
+  has_one :cart, :dependent => :destroy
   attr_accessor :password #only virtual attribute(getter and setter)
   attr_accessible :name, :email, :password, :password_confirmation  #editable attribute
 
@@ -43,6 +44,10 @@ class User < ActiveRecord::Base
 
   def boss?
     self.role == "Boss"
+  end
+
+  def customer?
+    self.role == "Customer"
   end
 
   def self.authenticate(email, submitted_password)

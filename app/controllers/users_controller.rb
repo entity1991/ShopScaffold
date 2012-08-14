@@ -4,9 +4,10 @@ class UsersController < ApplicationController
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :boss_user,   :only => [:destroy, :change_role]
   before_filter :access_for_create_user,       :only => [:new, :create]
+
   def index
     @title = "All users"
-    @users = User.paginate( page: params[:page], order: 'name', per_page: 4)
+    @users = User.paginate( page: params[:page], order: 'name', per_page: 20)
   end
 
   def show

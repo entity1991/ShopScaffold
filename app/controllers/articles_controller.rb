@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    @cart = current_cart
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @articles }

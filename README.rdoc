@@ -92,5 +92,15 @@ change what is displayed.
 
 offset(), joins(), group(), lock(), readonly()
 
+scope
+
+And default_url_options also does pretty much what it says, in that it provides a
+hash of URL options that are to be considered as present whenever they aren’t
+otherwise provided. In this case, we are providing a value for the :locale parameter.
+This is needed when a view on a page that does not have the locale
+specified attempts to construct a link to a page that does. We will see that in
+use soon.
+
+send_file and send_data
 
 
