@@ -1,18 +1,18 @@
 ShopScaffold::Application.routes.draw do
 
-  resources :categories
-
+    resources :categories
     resources :orders
     resources :line_items
     resources :carts
     resources :sessions, :only => [:new, :create, :destroy]
     resources :articles
     resources :users
-    post '/users/change_role'
-    get "store/index", as: "store"
+    post "/users/change_role"
     post "/shallow/change_locale", as: "locale"
+    get "store/index", as: "store"
     get "/shallow/search", as: "search"
     root :to => 'pages#home'
+    match 'picture/:id', :to => 'articles#picture'
     match '/contact', :to => 'pages#contact'
     match '/about',   :to => 'pages#about'
     match '/help',    :to => 'pages#help'

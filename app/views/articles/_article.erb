@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= rails %>
+    <img src="<%= url_for(:action => 'picture', :id => article.id) %>" class="article_image"/>
   </td>
   <td>
       <%= article.title %><br>

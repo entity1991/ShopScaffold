@@ -78,4 +78,10 @@ send_file and send_data
 
 :placeholder
 
+    mysql --max_allowed_packet=100M -u root -p database < dump.sql
+Also, change the my.cnf or my.ini file under the mysqld section and set max_allowed_packet=100M or you could run these
+commands in a MySQL console connected to that same server:
+    set global net_buffer_length=1000000;
+    set global max_allowed_packet=1000000000;
+
 

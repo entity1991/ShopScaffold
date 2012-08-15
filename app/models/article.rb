@@ -18,7 +18,7 @@ class Article < ActiveRecord::Base
   has_many :orders, through: :line_items
   before_destroy :is_line_items?
 
-  attr_accessible :description, :title, :price, :category_id
+  attr_accessible :description, :title, :price, :category_id, :uploaded_picture
 
   validates :title, :presence => true, :length => { :maximum => 50 }, :uniqueness => true
   validates :description, :presence => true, :length => { :maximum => 500 }
@@ -26,6 +26,13 @@ class Article < ActiveRecord::Base
   validates :price, :presence => true, :numericality => {greater_than_or_equal_to: 0.01}
 
   default_scope :order => 'articles.created_at DESC'
+
+  def uploaded_picture=(picture_field)
+    self.picture_data = picture_field.read
+  end
+  def base_part_of(file_name)
+    File.basename(file_name).gsub(/[^\w._-]/, '')
+  end
 
   private
 

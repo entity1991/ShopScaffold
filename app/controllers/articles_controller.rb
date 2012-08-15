@@ -11,10 +11,6 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
   end
 
   def new
@@ -55,6 +51,11 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     redirect_back_or root_path
+  end
+
+  def picture
+    @article = Article.find(params[:id])
+    send_data(@article.picture_data, disposition: "inline")
   end
 
   private

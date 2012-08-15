@@ -285,7 +285,7 @@ h6 {
 .article_box {
   float: left;
   width: 218px;
-  height: 220px;
+  height: 245px;
   text-align: center;
   margin: 0 20px 20px 0;
   padding: 3px;
@@ -294,8 +294,8 @@ h6 {
   }
   img {
     margin-bottom: 5px;
-    max-height: 100px;
-    max-width: 100px;
+    height: 100px;
+    max-width: 150px;
   }
   h3 {
     font-size: 11px;
@@ -306,9 +306,6 @@ h6 {
   .article_detail {
     margin-top: 3px;
     height: 81px;
-  }
-  div{
-    margin-bottom: 10px;
   }
   .add_to_cart {
     cursor: pointer;
@@ -486,4 +483,8 @@ h6 {
 
 .display_none{
   display: none;
+}
+
+.article_image{
+  max-height: 100px;
 }
