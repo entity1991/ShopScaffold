@@ -15,6 +15,11 @@ class Cart < ActiveRecord::Base
   def total_price
     self.line_items.to_a.sum {|item| item.total_price}
   end
+
+  def empty?
+    self.line_items.count == 0
+  end
+
 end
 # == Schema Information
 #
@@ -23,5 +28,6 @@ end
 #  id         :integer(4)      not null, primary key
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  user_id    :integer(4)
 #
 

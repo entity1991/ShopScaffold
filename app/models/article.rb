@@ -13,11 +13,12 @@
 
 class Article < ActiveRecord::Base
   belongs_to :user
+  belongs_to :category
   has_many :line_items
   has_many :orders, through: :line_items
   before_destroy :is_line_items?
 
-  attr_accessible :description, :title, :price
+  attr_accessible :description, :title, :price, :category_id
 
   validates :title, :presence => true, :length => { :maximum => 50 }, :uniqueness => true
   validates :description, :presence => true, :length => { :maximum => 500 }

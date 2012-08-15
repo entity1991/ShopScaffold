@@ -45,8 +45,9 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
+        current_cart.destroy
+        cart = Cart.new
+        session[:cart_id] = cart.id
         OrderNotifier.received(@order).deliver
         format.html { redirect_to store_path, notice: 'Thank you for your order.' }
       else

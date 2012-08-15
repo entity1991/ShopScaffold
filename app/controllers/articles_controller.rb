@@ -19,14 +19,15 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-
+    @categories = Category.all
     respond_to do |format|
       format.html # new.html.erb
     end
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id], :select => "*")
+    @categories = Category.all
   end
 
   def create

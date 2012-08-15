@@ -3,7 +3,7 @@
     <h3>Cart</h3>
     <div class="content">
       <ul class="sidebar_list" id="cart">
-        <%= render @cart if @cart%>
+        <%= render @cart unless @cart.empty?%>
       </ul>
     </div>
   </div>

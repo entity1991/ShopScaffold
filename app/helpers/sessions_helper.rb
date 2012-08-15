@@ -12,7 +12,7 @@ module SessionsHelper
   end
 
   def sign_out
-    self.current_user.cart.destroy
+    self.current_user.cart.destroy if current_user.cart
     cookies.delete(:remember_token)
     self.current_user = nil
   end

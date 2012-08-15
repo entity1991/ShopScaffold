@@ -12,5 +12,7 @@ end
 #  cart_id    :integer(4)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  quantity   :integer(4)      default(1)
+#  order_id   :integer(4)
 #
 

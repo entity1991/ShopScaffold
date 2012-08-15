@@ -13,7 +13,7 @@
 #
 
 class User < ActiveRecord::Base
-  ROLES =  %w(Admin Filler Customer)
+  ROLES =  %w(Customer Filler Courier Admin)
 
   has_many :articles#, :dependent => :destroy
   has_one :cart, :dependent => :destroy

@@ -14,25 +14,6 @@ Micropost.where("user_id = ?", id)
 Добавить вложенные маршруты так, чтобы по адресу /users/1/microposts показывались все микросообщения пользователя 1.
 (Вам также необходимо будет добавить в контроллер Microposts действие index и соответствующее представление.)
 
-Сейчас очень длинные слова крушат наш шаблон, как это показано на Рис. 11.17. Исправьте эту проблему с помощью хелпера
-wrap определенного в Листинге 11.42. (Обратите внимание на использование метода raw для предотвращения маскирования
-Рельсами результирующего HTML, совместно с sanitize методом необходимым для предотвращения межсайтового скриптинга.)
-
-module MicropostsHelper
-
-  def wrap(content)
-    sanitize(raw(content.split.map{ |s| wrap_long_string(s) }.join(' ')))
-  end
-
-  private
-
-    def wrap_long_string(text, max_width = 30)
-      zero_width_space = "&#8203;"
-      regex = /.{1,#{max_width}}/
-      (text.length < max_width) ? text :
-                                  text.scan(regex).join(zero_width_space)
-    end
-end
 
 coffee
 
@@ -94,5 +75,7 @@ specified attempts to construct a link to a page that does. We will see that in
 use soon.
 
 send_file and send_data
+
+:placeholder
 
 
