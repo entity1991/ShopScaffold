@@ -4,7 +4,4 @@ class ShallowController < ApplicationController
     redirect_to root_path locale: params[:set_locale]
   end
 
-  def search
-    render "users/index"
-  end
 end

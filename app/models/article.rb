@@ -31,10 +31,10 @@ class Article < ActiveRecord::Base
   # ensure that there are no line items referencing this product
   def is_line_items?
     if line_items.empty?
-      return true
+      true
     else
       errors.add(:base, 'Line Items present')
-      return false
+      false
     end
   end
 end

@@ -1,12 +1,12 @@
-<h1>Your Pragmatic Catalog</h1>
+<h1>Our products</h1>
 <% @articles.each do |article| %>
-    <div class="entry">
+    <div class="article_box">
       <%= rails %>
       <h3><%= article.title %></h3>
-      <%= sanitize(article.description) %>
-      <div class="price_line">
-        <span class="price"><%= sprintf("$%0.02f", article.price) %></span>
-        <%= button_to 'Add to Cart', line_items_path(article_id: article.id), remote: true %>
+      <span class="article_detail"><%= sanitize(article.description) %></span>
+      <div>
+        <%= button_to 'Add to Cart', line_items_path(article_id: article.id), remote: true, class: "add_to_cart" %>
+        <span class="article_price"><%= sprintf("$%0.02f", article.price) %></span>
       </div>
     </div>
 <% end %>
