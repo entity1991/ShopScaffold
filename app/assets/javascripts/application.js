@@ -14,5 +14,5 @@ j(document).ready(function(){
 //functions
 
 function toggleSigninWindow(){
-    j("#signinWindow").toggle();
+    j("#signin_window").toggle();
 }
