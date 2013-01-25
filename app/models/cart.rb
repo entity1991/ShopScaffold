@@ -21,13 +21,5 @@ class Cart < ActiveRecord::Base
   end
 
 end
-# == Schema Information
-#
-# Table name: carts
-#
-#  id         :integer(4)      not null, primary key
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#  user_id    :integer(4)
-#
+
 

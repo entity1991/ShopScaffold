@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_filter :set_i18n_locale_from_params
+
+  before_filter :set_i18n_locale_from_session
   before_filter :cart
 
   protect_from_forgery
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_cart
-    (signed_in? && current_user.cart != nil) ? current_user.cart : Cart.find(session[:cart_id])
+    Cart.find(session[:cart_id])
   rescue ActiveRecord::RecordNotFound
     cart = Cart.create
     session[:cart_id] = cart.id
@@ -23,18 +24,21 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def set_i18n_locale_from_params
-    if params[:locale]
-      if I18n.available_locales.include?(params[:locale].to_sym)
-        I18n.locale = params[:locale]
+  def set_i18n_locale_from_session
+    if session[:locale]
+      if I18n.available_locales.include?(session[:locale].to_sym)
+        I18n.locale = session[:locale]
       else
-        flash.now[:notice] = "#{params[:locale]} translation not available"
+        flash.now[:notice] = session[:locale] + " translation not available"
         logger.error flash.now[:notice]
       end
     end
   end
 
-  def default_url_options
-    { locale: I18n.locale }
+  private
+
+  def is_admin?
+    signed_in?
   end
+
 end

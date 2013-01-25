@@ -1,5 +1,4 @@
 <div id="header">
-  <%= link_to logo, root_path, :id => "logo"%>
   <div style="float: right;">
       <%= form_tag locale_path, class: 'locale' do %>
           <%= select_tag :set_locale, options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
@@ -10,13 +9,12 @@
       <nav id="header_right">
           <% if signed_in? %>
             <%= link_to t('Profile'), current_user %> |
-            <%= link_to t('Settings'), edit_user_path(current_user) %> |
           <% end %>
           <%= link_to t('Help'), help_path %> |
           <% if signed_in? %>
               <%= link_to t('Sign_out'), signout_path, :method => :delete %>
           <% else %>
-              <%= link_to_function t('Sign_in'), "toggleSigninWindow()"%> <%= t('or') %> <%= link_to t('Sign_up'), signup_path %>
+              <%= link_to_function t('Sign_in'), "toggleSigninWindow()"%>
           <% end %>
       </nav>
   </div>
@@ -31,20 +29,10 @@
   <div class="menu">
     <ul>
       <li><%= link_to t('Home'), root_path %></li>
-      <% if signed_in? && current_user.boss?%>
+      <% if signed_in? %>
         <li>
-          <%= link_to "Users (#{users.count if users})", users_path, :id => "users_count" %>
-          <ul>
-            <% User::ROLES.each do |role| %>
-                <li><%= link_to role+"s ("+some_users('role', role).count.to_s+")" , users_path(role: role) %></li>
-            <% end %>
-          </ul>
+          <%= link_to "Articles", articles_path %>
         </li>
-      <% end %>
-      <% if signed_in? && !current_user.customer?%>
-          <li>
-            <%= link_to "Articles", articles_path %>
-          </li>
       <% end %>
       <li>
         <%= link_to "Store", store_path%>
@@ -56,9 +44,9 @@
   </div>
   <div id="menu_second_bar">
     <div id="search">
-      <%= form_tag search_form_action, method: "get" do %>
+      <%= form_tag "/articles/index", method: "get" do %>
         <%= text_field_tag :search, "", class: "text_field"%>
-        <%= submit_tag 'submit', class: "submit_button", value: t('Search') + " #{search_form_label}" %>
+        <%= submit_tag 'submit', class: "submit_button", value: t('Search') + " products" %>
       <% end %>
     </div>
     <div class="cleaner"></div>

@@ -8,7 +8,6 @@ class OrderNotifier < ActionMailer::Base
   #
   def received(order)
     @order = order
-
-    mail to: order.email, subject: 'Pragmatic Store Order Confirmation'
+    mail to: order.email, subject: 'Order Confirmation'
   end
 end

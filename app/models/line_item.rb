@@ -7,17 +7,7 @@ class LineItem < ActiveRecord::Base
   def total_price
     self.article.price * self.quantity
   end
+
 end
-# == Schema Information
-#
-# Table name: line_items
-#
-#  id         :integer(4)      not null, primary key
-#  article_id :integer(4)
-#  cart_id    :integer(4)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#  quantity   :integer(4)      default(1)
-#  order_id   :integer(4)
-#
+
 

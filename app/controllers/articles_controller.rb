@@ -1,12 +1,8 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate, :only => [:create, :destroy]
-  before_filter :authorized_user, :only => :destroy
+  before_filter :is_admin?
 
   def index
     @articles = Article.all
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
   def show
@@ -16,13 +12,10 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
     @categories = Category.all
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
   def edit
-    @article = Article.find(params[:id], :select => "*")
+    @article = Article.find(params[:id])
     @categories = Category.all
   end
 
@@ -38,30 +31,16 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-
-    respond_to do |format|
-      if @article.update_attributes(params[:article])
-        format.html { redirect_to @article, :notice => 'Article was successfully updated.' }
-      else
-        format.html { render :action => "edit" }
-      end
+    if @article.update_attributes(params[:article])
+      redirect_to @article, :notice => 'Article was successfully updated.'
+    else
+      render :action => "edit"
     end
   end
 
   def destroy
     @article.destroy
-    redirect_back_or root_path
+    redirect_to :back
   end
 
-  def picture
-    @article = Article.find(params[:id])
-    send_data(@article.picture_data, disposition: "inline")
-  end
-
-  private
-
-  def authorized_user
-    @article = current_user.articles.find_by_id(params[:id])
-    redirect_to root_path if @article.nil?
-  end
 end

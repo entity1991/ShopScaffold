@@ -1,4 +1,5 @@
 module CategoriesHelper
+
   def categories_names
     cat_names = []
     Category.all.each  do |cat|

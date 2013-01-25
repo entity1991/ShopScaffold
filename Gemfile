@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 gem 'jquery-rails'
 gem 'rails'
-gem 'mysql'
-gem 'activerecord-postgresql-adapter' #it needs to doesn't make mistakes in DB in Production Environment
+gem 'mysql2'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'annotate', '~> 2.4.1.beta'
 gem 'heroku'
@@ -31,21 +30,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'uglifier'
 end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'

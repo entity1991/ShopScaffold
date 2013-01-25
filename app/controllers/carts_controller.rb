@@ -1,16 +1,9 @@
 class CartsController < ApplicationController
 
-  # GET /carts
   def index
     @carts = Cart.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @carts }
-    end
   end
 
-  # GET /carts/1
   def show
     begin
       @cart = Cart.find(params[:id])
@@ -18,60 +11,40 @@ class CartsController < ApplicationController
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to store_path, notice: 'Invalid cart'
     else
-      respond_to do |format|
-        format.html # show.html.erb
-      end
     end
   end
 
-  # GET /carts/new
   def new
     @cart = Cart.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
-  # GET /carts/1/edit
   def edit
     @cart = Cart.find(params[:id])
   end
 
-  # POST /carts
   def create
     @cart = Cart.new(params[:cart])
-
-    respond_to do |format|
-      if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
-      else
-        format.html { render action: "new" }
-      end
+    if @cart.save
+      redirect_to @cart, notice: 'Cart was successfully created.'
+    else
+      render action: "new"
     end
   end
 
-  # PUT /carts/1
   def update
     @cart = Cart.find(params[:id])
-
-    respond_to do |format|
-      if @cart.update_attributes(params[:cart])
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
-      else
-        format.html { render action: "edit" }
-      end
+    if @cart.update_attributes(params[:cart])
+      redirect_to @cart, notice: 'Cart was successfully updated.'
+    else
+      render action: "edit"
     end
   end
 
-  # DELETE /carts/1
   def destroy
     @cart = current_cart
     @cart.destroy
     session[:cart_id] = nil
-    respond_to do |format|
-      format.html { redirect_to store_path, notice: 'Your cart is currently empty' }
-    end
+    redirect_to store_path, notice: 'Your cart is currently empty'
   end
 
 end

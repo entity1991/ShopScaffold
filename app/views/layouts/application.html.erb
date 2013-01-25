@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= title %></title>
-  <%= csrf_meta_tag %>
-  <%= render 'layouts/styles_&_scripts' %>
-</head>
-<body>
-<div id="wrapper">
-  <%= render 'layouts/header'%>
-  <div id="main">
-    <%= render 'layouts/sidebar' %>
-    <% unless params[:controller] == "sessions" %>
-      <%= render 'shared/flash_messages'%>
-    <% end %>
-    <div id="content">
-        <%= yield %>
+  <head>
+    <title><%= title %></title>
+    <%= csrf_meta_tag %>
+    <%= render 'layouts/styles_&_scripts' %>
+  </head>
+  <body>
+    <div id="wrapper">
+      <%= render 'layouts/header'%>
+      <div id="main">
+        <%= render 'layouts/sidebar' %>
+        <% unless params[:controller] == "sessions" %>
+          <%= render 'shared/flash_messages'%>
+        <% end %>
+        <div id="content">
+          <%= yield %>
+        </div>
+      </div>
+      <div class="cleaner"></div>
+      <%= render 'layouts/footer' %>
     </div>
-  </div>
-  <div class="cleaner"></div>
-  <%= render 'layouts/footer' %>
-</div>
-<% if Rails.env.development? %>
-    <h4>Application tree</h4>
-    <% @files = Dir.glob('*'); %>
-    <% for file in @files %>
-        <br> <%= file %>
-    <% end %>
-    <h4>Session</h4> <%= debug(session) %>
-    <h4>Params</h4> <%= debug(params) %>
-<% end %>
-</body>
+  </body>
 </html>
