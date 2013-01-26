@@ -1,50 +1,23 @@
 <div id="header">
-  <div class="floar_right">
-    <% if signed_in? %>
-      <%= link_to t('Profile'), current_user %>
-      <div class="cleaner"></div>
-    <% end %>
-    <%= link_to t('Help'), help_path %>
-    <div class="cleaner"></div>
-    <% if signed_in? %>
-      <%= link_to t('Sign_out'), signout_path, :method => :delete %>
-      <div class="cleaner"></div>
-    <% else %>
-      <%= link_to_function t('Sign_in'), "toggleSigninWindow()"%>
-      <div class="cleaner"></div>
-    <% end %>
-  </div>
-</div>
-
-<div class="cleaner"></div>
-<%= render 'shared/signin_window'  %>
-
-<div class="cleaner"></div>
-<br>
-<div id="wp-menu">
-  <div class="menu">
-    <ul>
-      <li><%= link_to t('Home'), root_path %></li>
+  <div class="wrapper">
+    <div class="">
       <% if signed_in? %>
-        <li>
-          <%= link_to "Articles", articles_path %>
-        </li>
+        <%= link_to t('profile'), "#" %>
+        <%= link_to "Articles", articles_path %>
       <% end %>
-      <li>
-        <%= link_to "Store", store_path%>
-      </li>
-      <li>
-         </li>
-    </ul>
-    <br style="clear: left" />
-  </div>
-  <div id="menu_second_bar">
-    <div id="search">
-      <%= form_tag "/articles/index", method: "get" do %>
-        <%= text_field_tag :search, "", class: "text_field"%>
-        <%= submit_tag 'submit', class: "submit_button", value: t('Search') + " products" %>
+      <%= link_to t('home'), root_path %>
+      <%= link_to t('help'), help_path %>
+      <%= link_to "Store", store_path%>
+      <% if signed_in? %>
+        <%= link_to t('sign_out'), signout_path, :method => :delete %>
+      <% else %>
+        <a id="signin_window_toggler" href="#"><%= t('sign_in') %></a>
       <% end %>
     </div>
-    <div class="cleaner"></div>
   </div>
 </div>
+
+<%= render 'shared/flash_messages'%>
+<%= render 'shared/signin_window'  %>
+
+

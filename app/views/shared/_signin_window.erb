@@ -1,21 +1,10 @@
 <div id="signin_window">
-  <h1>Sign in</h1>
-  ` <% if params[:controller] == "sessions" %>
-      <%= render 'shared/flash_messages'%>
-    <% end %>
+  <h3><%= t('enter_for_admin')%></h3>
     <%= form_for(:session, :url => sessions_path) do |f| %>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.text_field :email %>
-        </div>
-        <div class="field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password %>
-        </div>
-        <div class="actions">
-          <%= f.submit "Sign in" %>
-        </div>
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+      <%= f.submit t('sign_in') %>
     <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
 </div>

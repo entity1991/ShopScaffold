@@ -2,13 +2,13 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  All_users: "All users"
-  Profile: "Profile"
-  Settings: "Settings"
-  Help: "Help"
-  Sign_out: "Sign out"
-  Sign_in: "Sign in"
+  profile: "Profile"
+  settings: "Settings"
+  help: "Help"
+  sign_out: "Sign out"
+  sign_in: "Sign in"
   or: "or"
-  Sign_up: "Sign up"
-  Home: "Home"
-  Search: "Search"
+  sign_up: "Sign up"
+  home: "Home"
+  search: "Search"
+  enter_for_admin: "Enter for admin"
