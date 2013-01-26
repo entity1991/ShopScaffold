@@ -23,9 +23,7 @@ class SessionsController < ApplicationController
 
   def change_locale
     session[:locale] = params[:set_locale]
-    redirect_to root_path
+    redirect_to :back
   end
-
-  private
 
 end

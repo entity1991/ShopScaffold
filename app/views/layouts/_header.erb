@@ -1,19 +1,10 @@
 <div id="header">
-  <div class="wrapper">
-    <div class="">
-      <% if signed_in? %>
-        <%= link_to t('profile'), "#" %>
-        <%= link_to "Articles", articles_path %>
-      <% end %>
-      <%= link_to t('home'), root_path %>
-      <%= link_to t('help'), help_path %>
-      <%= link_to "Store", store_path%>
-      <% if signed_in? %>
-        <%= link_to t('sign_out'), signout_path, :method => :delete %>
-      <% else %>
-        <a id="signin_window_toggler" href="#"><%= t('sign_in') %></a>
-      <% end %>
-    </div>
+  <div class="float_left" id="admin_links">
+    <% if signed_in? %>
+      <%= link_to t('products_list'), "#" %>
+      <%= link_to t('profile'), admin_profile_path %>
+      <%= link_to t('sign_out'), signout_path, :method => :delete %>
+    <% end %>
   </div>
 </div>
 

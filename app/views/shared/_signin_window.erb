@@ -3,7 +3,7 @@
     <%= form_for(:session, :url => sessions_path) do |f| %>
       <%= f.label :email %><br />
       <%= f.text_field :email %>
-      <%= f.label :password %><br />
+      <%= f.label t('password') %><br />
       <%= f.password_field :password %>
       <%= f.submit t('sign_in') %>
     <% end %>

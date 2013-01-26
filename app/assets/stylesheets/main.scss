@@ -91,6 +91,20 @@ table{
       background-color: rgba(255, 255, 255, 0.14);
     }
   }
+  #admin_links{
+    a{
+      color: #d1d1d1;
+    }
+  }
+}
+
+#signin_window_toggler{
+  width: 30px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  top: 137px;
+  left: 120px;
 }
 
 #signin_window{
@@ -98,18 +112,16 @@ table{
   width: 200px;
   text-align: left;
   position: absolute;
-  right: 100px;
+  left: 100px;
   top: -250px;
   padding: 10px;
   z-index: 50;
-  background-color: #aaadba;
-  text-shadow: #121212;
-  opacity: 0.85;
-  color: #f5f5f5;
+  background-color: #ffffff;
+  opacity: 0.90;
+  color: #004e76;
   h3{
     margin: 0;
     border-bottom: 1px solid #ddd;
-    color: white;
   }
   input{
     width: 180px;
@@ -293,7 +305,7 @@ table{
 
 #content{
   float: left;
-  padding: 3px;
+  padding: 10px;
 }
 
 #footer {
@@ -305,18 +317,26 @@ table{
   }
 }
 
+.form_fields, .form_errors{
+  width: 50%;
+  padding: 10px;
+  float: left;
+}
+
+.field_notice{
+  font-size: 0.8em;
+  color: #13568f;
+  margin: 4px;
+  display: inline-block;
+}
+
 #error_explanation{
-  margin: 10px;
   background-color: #fbfbfb;
   border: 1px solid #ddd;
-  h3{
+  padding: 5px;
+  h4{
     padding: 7px;
-    height: 30px;
-    background-color: rgba(160, 36, 43, 0.20);
-  }
-  p{
-    padding: 3px 10px;
-    background-color: #f5f5f5;
+    height: 25px;
     border-bottom: 1px solid #ddd;
   }
   ul{

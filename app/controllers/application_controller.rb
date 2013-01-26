@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_filter :set_i18n_locale_from_session
-  before_filter :cart
+  before_filter :set_i18n_locale_from_session,  :cart, :render_sidebar
 
   protect_from_forgery
 
@@ -22,6 +21,16 @@ class ApplicationController < ActionController::Base
     cart
   end
 
+  private
+
+  def is_admin?
+    redirect_to root_path, notice: t('you_do_not_have_a permission_to_this_page') unless signed_in?
+  end
+
+  def render_sidebar
+    @render_sidebar = true
+  end
+
   protected
 
   def set_i18n_locale_from_session
@@ -33,12 +42,6 @@ class ApplicationController < ActionController::Base
         logger.error flash.now[:notice]
       end
     end
-  end
-
-  private
-
-  def is_admin?
-    signed_in?
   end
 
 end

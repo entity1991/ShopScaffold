@@ -13,3 +13,31 @@ ua:
   home: "Головна"
   search: "Пошук"
   enter_for_admin: "Вхід для адміністратора"
+  login: "Логін"
+  password: "Пароль"
+  products_list: "Список товарів"
+  settings_successfully_updated: "Настройки успішно змінені"
+  there_where_the_problems_with_following_fields: "Виникли наступні проблеми при збереженні:"
+
+  activerecord:
+      attributes:
+        user:
+          name: "Ім'я"
+          email: "Електронна пошта"
+          password: "Пароль"
+          password_confirmation: "Підтвердження паролю"
+      errors:
+        models:
+          user:
+            attributes:
+              name:
+                blank: "обов’язкове"
+                too_short: "дуже коротке"
+              email:
+                blank: "обов’язкова"
+                taken: "вже зайнята"
+                invalid: "має неправильний формат"
+              password:
+                blank: "обов’язковий"
+                too_short: "дуже короткий"
+                confirmation: "не співпадає"

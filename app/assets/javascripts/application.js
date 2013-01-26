@@ -26,6 +26,10 @@ j(document).ready(function(){
     j(".flash span").click(function(){
         j(this).parent(".flash").remove();
     });
+
+    if(j("#sidebar").length == 0){
+        j("#content").css("width", "100%");
+    }
 });
 
 //functions

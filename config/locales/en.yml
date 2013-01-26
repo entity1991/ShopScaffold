@@ -12,3 +12,10 @@ en:
   home: "Home"
   search: "Search"
   enter_for_admin: "Enter for admin"
+  login: "Login"
+  password: "Password"
+  products: "Products"
+  products_list: "Products list"
+  settings_successfully_updated: "Settings successfully updated"
+
+  there_where_the_problems_with_following_fields: "There where the problems with following fields:"

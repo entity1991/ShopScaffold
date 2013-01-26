@@ -13,3 +13,31 @@ ru:
   home: "Главная"
   search: "Поиск"
   enter_for_admin: "Вход для администратора"
+  login: "Логин"
+  password: "Пароль"
+  products_list: "Список товаров"
+  settings_successfully_updated: "Настройки успешно обновлены"
+  there_where_the_problems_with_following_fields: "Обнаружены проблеммы з следующими полями:"
+
+  activerecord:
+      attributes:
+        user:
+          name: "Им'я"
+          email: "Електронная почта"
+          password: "Пароль"
+          password_confirmation: "Подтверждение пароля"
+      errors:
+        models:
+          user:
+            attributes:
+              name:
+                blank: "об'язательное"
+                too_short: "очень короткое"
+              email:
+                blank: "об'язательна"
+                taken: "уже зайнятый"
+                invalid: "имеет неправильный формат"
+              password:
+                blank: "об'язательный"
+                too_short: "очень короткий"
+                confirmation: "не соответсвует подтверждению"
