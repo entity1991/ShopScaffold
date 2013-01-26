@@ -1,12 +1,9 @@
 class ProductsController < ApplicationController
+
   before_filter :is_admin?
 
   def index
     @products = Product.all
-  end
-
-  def show
-    @product = Product.find(params[:id])
   end
 
   def new
@@ -22,9 +19,10 @@ class ProductsController < ApplicationController
   def create
     @product  = Product.new(params[:product])
     if @product.save
-      flash[:success] = "Product created!"
+      flash[:success] = t('product_created')
       redirect_to products_path
     else
+      @categories = Category.all
       render 'new'
     end
   end
@@ -32,7 +30,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(params[:product])
-      redirect_to @product, :notice => 'Product was successfully updated.'
+      redirect_to products_path, :notice => t('product_updated')
     else
       render :action => "edit"
     end

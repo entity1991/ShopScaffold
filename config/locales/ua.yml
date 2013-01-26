@@ -18,6 +18,10 @@ ua:
   products_list: "Список товарів"
   settings_successfully_updated: "Настройки успішно змінені"
   there_where_the_problems_with_following_fields: "Виникли наступні проблеми при збереженні:"
+  you_do_not_have_a_permission_to_this_page: "Ви не маєте доступу до даної сторінки"
+  back: "Назад"
+  product_created: "Продукт створено!"
+  product_updated: "Продукт оновлено!"
 
   activerecord:
       attributes:
@@ -26,6 +30,12 @@ ua:
           email: "Електронна пошта"
           password: "Пароль"
           password_confirmation: "Підтвердження паролю"
+        product:
+          title: "Назва"
+          description: "Опис"
+          price: "Ціна"
+          category: "Категорія"
+          image_content_type: "Вибраний файл"
       errors:
         models:
           user:
@@ -41,3 +51,15 @@ ua:
                 blank: "обов’язковий"
                 too_short: "дуже короткий"
                 confirmation: "не співпадає"
+          product:
+            attributes:
+              title:
+                blank: "обов’язковий"
+              description:
+                blank: "обов’язковий"
+              price:
+                greater_than_or_equal_to: "повинна бути більше нуля"
+                blank: "обов’язкова"
+                not_a_number: "не являеться числом"
+              image_content_type:
+                invalid: "має неправильний формат. Потрібно вибрати картинку"

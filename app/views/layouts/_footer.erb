@@ -1,6 +1,6 @@
 <div id="footer">
   <div class="float_left">
-    <%= link_to "Created by @Entity", "#" %>
+    Created by <%= link_to "@Entity", "#" %>
   </div>
   <%= form_tag locale_path, class: 'locale float_right' do %>
     <%= select_tag :set_locale, options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>

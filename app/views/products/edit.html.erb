@@ -1,5 +1,6 @@
-<h1>Editing product</h1>
+<h1>Изменение атрибутов продукта</h1>
+
+<%= image_tag @product.image.url :medium  %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @product %> | <%= link_to 'Back', products_path %>

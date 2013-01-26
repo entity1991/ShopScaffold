@@ -1,15 +1,19 @@
 <div id="sidebar">
-  <div class="sidebar_box">
-    <h3>Cart</h3>
-    <div class="content">
-      <ul class="sidebar_list" id="cart">
-        <%= render @cart unless @cart.empty?%>
-      </ul>
+  <% if signed_in? %>
+    Categorien
+  <% else %>
+    <div class="sidebar_box">
+      <h3>Cart</h3>
+      <div class="content">
+        <ul class="sidebar_list" id="cart">
+          <%= render @cart unless @cart.empty?%>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="sidebar_box">
-    <h3>Best Sellers </h3>
-    <div class="content">
+    <div class="sidebar_box">
+      <h3>Best Sellers </h3>
+      <div class="content">
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

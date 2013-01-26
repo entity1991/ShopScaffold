@@ -17,5 +17,7 @@ en:
   products: "Products"
   products_list: "Products list"
   settings_successfully_updated: "Settings successfully updated"
-
+  back: "Back"
   there_where_the_problems_with_following_fields: "There where the problems with following fields:"
+  product_created: "Product Created!"
+  product_updated: "Product Updated!"

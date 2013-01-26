@@ -9,6 +9,7 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  outline: none;
 }
 
 p, h1, h2, h3, h4, h5, h6, a {
@@ -16,12 +17,17 @@ p, h1, h2, h3, h4, h5, h6, a {
   padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6{
+  font-weight: normal;
+  color: #286f97;
+}
+
 html{min-height: 100%;}
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.85em;
-  width: 1000px;
+  width: 1100px;
   margin: auto;
   cursor: default;
   position: relative;
@@ -45,6 +51,7 @@ label{
   font-size: 0.8em;
   padding: 3px;
   margin-top: 5px;
+  color: #328dbf;
 }
 
 table{
@@ -62,6 +69,45 @@ table{
     & td{
       border: 1px solid #e1e1e1;
     }
+  }
+}
+
+.file_wrapper{
+  position: relative;
+  height: 30px;
+  width: 225px;
+  overflow-x: visible;
+  display: inline-block;
+  margin: 10px;
+  .file{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+  button{
+    cursor: pointer;
+    height: 100%;
+    width: 100px;
+    text-shadow: 1px 1px 0px #2a87a2;
+    background: -webkit-linear-gradient(top, #5BC0DE, #328dbf);
+    background: -moz-linear-gradient(top, #5BC0DE, #328dbf);
+    border: none;
+    color: #f5f5f5;
+    padding: 3px 5px;
+    border-radius: 1px;
+    position: relative;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 0 2px #2a87a2;
+    font-size: 0.8em;
+  }
+  .just_uploaded_file_name{
+    padding-left: 5px;
+    color: #286f97;
+    width: 120px !important;
+    display: inline-block;
+    overflow-x: visible;
   }
 }
 
@@ -182,37 +228,41 @@ table{
   background-color: white;
   input{
     height: 30px;
-    box-shadow: 0px 0px 2px rgba(133, 133, 133, 0.80);
-    border: 1px solid #808080;
+    box-shadow: 0px 0px 3px rgba(133, 133, 133, 0.80);
+    border: 1px solid #a3a3a3;
     border-radius: 3px;
     padding: 5px;
     color: #444;
     margin-bottom: 7px;
     &[type=submit], &[type=button]{
-      padding-left: 12px;
-      padding-right: 12px;
+      padding: 4px 10px;
       border: none;
       text-align: center;
-      border-radius: 3px;
-      color: #fff;
+      border-radius: 1px;
+      color: #eee;
       text-shadow: 1px 1px 0px #499249;
       background: -webkit-linear-gradient(top, #62C462, #51A351);
       background: -moz-linear-gradient(top, #62C462, #51A351);
       margin: 10px;
       white-space: nowrap;
       cursor: pointer;
+      font-size: 0.8em;
+      min-width: 100px;
     }
+  }
+  input[type=file]{
+    border: none;
+    box-shadow: none;
   }
   .button{
     box-shadow: 0px 0px 2px rgba(133, 133, 133, 0.80);
     text-align: center;
     height: 30px;
-    border-radius: 3px;
-    padding: 8px 12px;
-    color: #fff;
+    border-radius: 1px;
+    padding: 8px 10px;
+    color: #eee;
     display: inline-block;
     white-space: nowrap;
-    font-family: arial;
     font-size: 0.8em;
     cursor: pointer;
     background-color: #808080;
@@ -228,8 +278,8 @@ table{
     }
     &.green{
       text-shadow: 1px 1px 0px #499249;
-      background: -webkit-linear-gradient(top, #62C462, #51A351);
-      background: -moz-linear-gradient(top, #62C462, #51A351);
+      background: -webkit-linear-gradient(top, #62C462, #419639);
+      background: -moz-linear-gradient(top, #62C462, #419639);
     }
     &.red{
       text-shadow: 1px 1px 0px #ac312b;
@@ -242,10 +292,9 @@ table{
     }
   }
   textarea{
-    height: 20em;
     width: 100%;
     max-width: 100%;
-    box-shadow: 0px 0px 5px rgba(133, 133, 133, 0.80);
+    box-shadow: 0px 0px 3px rgba(133, 133, 133, 0.80);
     border: 1px solid #a3a3a3;
     border-radius: 3px;
     padding: 5px;
@@ -277,6 +326,7 @@ table{
       background-color: rgba(255, 255, 255, 0.87);
     }
     #search_submit{
+      min-width: 25px;
       height: 25px;
       width: 25px;
       margin: 0;
@@ -293,24 +343,28 @@ table{
 
 #sidebar{
   width: 20%;
+  height: inherit;
   float: left;
   background: url("leftsidebar_bg.jpg") repeat;
   display: block;
-  padding: 5px;
+  padding: 5px 5px 15px;
+  border-right: 1px solid #13568f;
+  border-radius: 0 0 0 12px;
   .sidebar_box {
-    h3 {
-    }
   }
 }
 
 #content{
   float: left;
+  width: 80%;
   padding: 10px;
 }
 
 #footer {
+  margin-left: auto;
+  margin-right: auto;
   padding: 5px;
-  width: 100%;
+  width: 95%;
   font-size: 80%;
   a{
     color: #d3d3d3;
@@ -332,17 +386,18 @@ table{
 
 #error_explanation{
   background-color: #fbfbfb;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(141, 52, 58, 0.85);
   padding: 5px;
   h4{
     padding: 7px;
-    height: 25px;
     border-bottom: 1px solid #ddd;
+    color: black;
   }
   ul{
     padding: 5px 50px;
     list-style: none;
     line-height: 1.5em;
+    color: #222;
   }
 }
 
@@ -399,4 +454,48 @@ table{
   text-decoration: none !important;
   font-size: 0.9em;
   color: #EE5F5B;
+}
+
+#new_product{
+  margin-top: -30px;
+}
+
+.admin_product{
+  padding: 10px 10px 15px;
+  min-height: 120px;
+  font-size: 0.95em;
+  &:nth-child(odd){
+    background-color: rgba(173, 216, 230, 0.20);
+  }
+  .image_wrapper{
+    float: left;
+    width: 120px;
+  }
+  .product_title{
+    font-weight: 700;
+    color: #333;
+    width: 70%;
+  }
+  .actions{
+    text-align: center;
+    font-size: 0.8em;
+    float: right;
+    a{
+      padding-top: 10px;
+      margin-left: 5px;
+      img{
+        height: 10px;
+        width: 10px;
+      }
+    }
+  }
+  .product_price{
+    float: left;
+    color: #2e8b57;
+    font-weight: bold;
+  }
+  .product_desc{
+    float: left;
+    margin-top: -5px;
+  }
 }

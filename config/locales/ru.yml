@@ -17,7 +17,11 @@ ru:
   password: "Пароль"
   products_list: "Список товаров"
   settings_successfully_updated: "Настройки успешно обновлены"
-  there_where_the_problems_with_following_fields: "Обнаружены проблеммы з следующими полями:"
+  there_where_the_problems_with_following_fields: "Обнаружены проблеммы со следующими полями:"
+  you_do_not_have_a_permission_to_this_page: "Вы не имеете доступа к данной странице"
+  back: "Назад"
+  product_created: "Продукт создано!"
+  product_updated: "Продукт обновлено!"
 
   activerecord:
       attributes:
@@ -26,6 +30,12 @@ ru:
           email: "Електронная почта"
           password: "Пароль"
           password_confirmation: "Подтверждение пароля"
+        product:
+          title: "Название"
+          description: "Описание"
+          price: "Цена"
+          category: "Категория"
+          image_content_type: "Выбраный файл"
       errors:
         models:
           user:
@@ -41,3 +51,16 @@ ru:
                 blank: "об'язательный"
                 too_short: "очень короткий"
                 confirmation: "не соответсвует подтверждению"
+          product:
+            attributes:
+              title:
+                blank: "об'язательное"
+              description:
+                blank: "об'язательное"
+              price:
+                greater_than_or_equal_to: "должна быть больше нуля"
+                blank: "об'язательна"
+                not_a_number: "не является числом"
+              image_content_type:
+                invalid: "имеет неправильный формат. Нужно выбрать картинку"
+

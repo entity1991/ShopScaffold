@@ -1,20 +1,21 @@
-<%= form_for(@article, :html => {multipart: true}) do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
-
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-
-  <%= f.label :description %><br>
-  <%= f.text_area :description, rows: 4 %>
-
-  <%= f.label :price %><br>
-  <%= f.text_field :price %>
-
-  <%= f.label :category %><br >
-  <%= f.collection_select :category_id, @categories, :id, :name if @categories %>
-
-  Upload Your picture<br>
-  <%= f.file_field "uploaded_picture" %>
-  <%= submit_tag "Add Article" %>
-
+<%= form_for(@product, :html => {multipart: true}) do |f| %>
+  <div class="form_fields">
+    <%= f.label "Название" %><br>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label "Описание товара" %><br>
+    <%= f.text_area :description, rows: 8 %>
+    <br>
+    <%= f.label "Цена" %><br>
+    <%= f.text_field :price %>
+    <br>
+    <%= f.label "Категория" %><br >
+    <%= f.collection_select :category_id, @categories, :id, :name if @categories %>
+    <br><br>
+    <%= f.file_field :image, class: "with_file_name_label" %><br>
+    <%= submit_tag "ГОТОВО" %>
+  </div>
+  <div class="form_errors">
+    <%= render 'shared/error_messages', :object => f.object %>
+  </div>
 <% end %>

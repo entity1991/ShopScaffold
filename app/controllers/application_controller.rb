@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   private
 
   def is_admin?
-    redirect_to root_path, notice: t('you_do_not_have_a permission_to_this_page') unless signed_in?
+    redirect_to root_path, notice: t('you_do_not_have_a_permission_to_this_page') unless signed_in?
   end
 
   def render_sidebar

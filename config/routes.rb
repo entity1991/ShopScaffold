@@ -6,7 +6,7 @@ ShopScaffold::Application.routes.draw do
   resources :orders
   resources :carts
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :products
+  resources :products, :except => [:show]
 
   post "/users/change_role"
   post "/sessions/change_locale", as: "locale"

@@ -1,7 +1,7 @@
 <div id="header">
   <div class="float_left" id="admin_links">
     <% if signed_in? %>
-      <%= link_to t('products_list'), "#" %>
+      <%= link_to t('products_list'), products_path %>
       <%= link_to t('profile'), admin_profile_path %>
       <%= link_to t('sign_out'), signout_path, :method => :delete %>
     <% end %>
