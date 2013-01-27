@@ -1,5 +1,11 @@
-<h1>Список всех товаров(<%= @products.length %>)</h1>
-<%= link_to "Создать новый", new_product_path, class: "button green float_right", id: "new_product" %>
+<h1>
+  <% if @products.length > 0 %>
+    Список всех товаров (<%= @products.length %>)
+  <% else %>
+    У Вас пока нет ни одного продукта!
+  <% end %>
+</h1>
+<%= link_to "Создать новый товар", new_product_path, class: "button green float_right", id: "new_product" %>
 <br>
 <% if @products.present? %>
   <% @products.each do |product| %>
@@ -20,6 +26,5 @@
     </div>
   <% end %>
 <% else %>
-  <br>У Вас пока нет ни одного продукта!
 <% end %>
 

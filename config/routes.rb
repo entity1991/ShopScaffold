@@ -2,11 +2,11 @@ ShopScaffold::Application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :categories
+  resources :categories, :except => [:show]
   resources :orders
   resources :carts
-  resources :sessions, :only => [:new, :create, :destroy]
-  resources :products, :except => [:show]
+  resources :sessions,   :only   => [:new, :create, :destroy]
+  resources :products,   :except => [:show]
 
   post "/users/change_role"
   post "/sessions/change_locale", as: "locale"

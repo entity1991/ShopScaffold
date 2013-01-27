@@ -12,12 +12,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find params[:id]
     @categories = Category.all
   end
 
   def create
-    @product  = Product.new(params[:product])
+    @product  = Product.new params[:product]
     if @product.save
       flash[:success] = t('product_created')
       redirect_to products_path
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find params[:id]
     if @product.update_attributes(params[:product])
       redirect_to products_path, :notice => t('product_updated')
     else
@@ -37,6 +37,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find params[:id]
     @product.destroy
     redirect_to :back
   end

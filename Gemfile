@@ -7,6 +7,7 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'annotate', '~> 2.4.1.beta'
 gem 'heroku'
 gem 'i18n'
+gem 'paperclip'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'

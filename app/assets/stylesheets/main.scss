@@ -19,7 +19,7 @@ p, h1, h2, h3, h4, h5, h6, a {
 
 h1, h2, h3, h4, h5, h6{
   font-weight: normal;
-  color: #286f97;
+  color: #419639;
 }
 
 html{min-height: 100%;}
@@ -68,6 +68,7 @@ table{
     background-color: white;
     & td{
       border: 1px solid #e1e1e1;
+      padding: 3px;
     }
   }
 }
@@ -228,9 +229,9 @@ table{
   background-color: white;
   input{
     height: 30px;
-    box-shadow: 0px 0px 3px rgba(133, 133, 133, 0.80);
+    box-shadow: 0px 1px 3px rgba(133, 133, 133, 0.80) inset;
     border: 1px solid #a3a3a3;
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 5px;
     color: #444;
     margin-bottom: 7px;
@@ -294,9 +295,9 @@ table{
   textarea{
     width: 100%;
     max-width: 100%;
-    box-shadow: 0px 0px 3px rgba(133, 133, 133, 0.80);
+    box-shadow: 0px 1px 3px rgba(133, 133, 133, 0.80) inset;
     border: 1px solid #a3a3a3;
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 5px;
     color: #444;
     margin-bottom: 7px;
@@ -311,7 +312,6 @@ table{
   background-size: cover;
   position: relative;
   #search_form{
-    padding-left: 35px !important;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -323,14 +323,19 @@ table{
       padding: 3px;
       color: #555;
       margin: 0;
+      margin-right: 25px;
       background-color: rgba(255, 255, 255, 0.87);
+      box-shadow: none;
     }
     #search_submit{
+      position: absolute;
+      top: 0;
+      right: 0;
+      box-shadow: none;
       min-width: 25px;
       height: 25px;
       width: 25px;
       margin: 0;
-      margin-left: -4px;
       background: url("binoculars.png") rgba(255, 255, 255, 0.87) no-repeat;
       background-position: 1px 1px;
       background-size: 90%;
@@ -348,7 +353,7 @@ table{
   background: url("leftsidebar_bg.jpg") repeat;
   display: block;
   padding: 5px 5px 15px;
-  border-right: 1px solid #13568f;
+  border-right: 1px solid #15609f;
   border-radius: 0 0 0 12px;
   .sidebar_box {
   }
@@ -366,8 +371,12 @@ table{
   padding: 5px;
   width: 95%;
   font-size: 80%;
+  color: #d3d3d3;
   a{
     color: #d3d3d3;
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }
 
@@ -456,7 +465,7 @@ table{
   color: #EE5F5B;
 }
 
-#new_product{
+#new_product, #new_category{
   margin-top: -30px;
 }
 
@@ -465,7 +474,7 @@ table{
   min-height: 120px;
   font-size: 0.95em;
   &:nth-child(odd){
-    background-color: rgba(173, 216, 230, 0.20);
+    background-color: rgba(244, 244, 244, 0.99);
   }
   .image_wrapper{
     float: left;
@@ -497,5 +506,14 @@ table{
   .product_desc{
     float: left;
     margin-top: -5px;
+  }
+}
+
+#category_actions{
+  #edit_category:hover{
+    color: #13568f;
+  }
+  #delete_category:hover{
+    color: #ac312b;
   }
 }

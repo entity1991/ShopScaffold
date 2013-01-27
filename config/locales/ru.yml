@@ -22,6 +22,12 @@ ru:
   back: "Назад"
   product_created: "Продукт создано!"
   product_updated: "Продукт обновлено!"
+  category_created: "Категорию создано!"
+  category_updated: "Название обновлено!"
+  Russian: "Русский"
+  Ukrainian: "Украинский"
+  English: "Английский"
+  categories: "Категории"
 
   activerecord:
       attributes:
@@ -36,6 +42,8 @@ ru:
           price: "Цена"
           category: "Категория"
           image_content_type: "Выбраный файл"
+        category:
+          name: "Название"
       errors:
         models:
           user:
@@ -63,4 +71,8 @@ ru:
                 not_a_number: "не является числом"
               image_content_type:
                 invalid: "имеет неправильный формат. Нужно выбрать картинку"
+          category:
+            attributes:
+              name:
+                blank: "не может быть пустым"
 

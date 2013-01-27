@@ -1,23 +1,20 @@
-<h1>Listing categories</h1>
-
+<h1>Категории товаров</h1>
+<%= link_to 'Добавить новую категорию', new_category_path, class: "button green float_right", id: "new_category" %>
+<br>
 <table>
   <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Категория</th>
+    <th>Количество товаров</th>
+    <th>Действия</th>
   </tr>
-
 <% @categories.each do |category| %>
   <tr>
     <td><%= category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td width="250px"><%= category.products.length %></td>
+    <td width="250px" id="category_actions">
+      <%= link_to "Редагировать назавние", edit_category_path(category), id:"edit_category" %> или
+      <%= link_to "Удалить", category_path(category),  method: :delete, confirm: "Точно?", id: "delete_category" %>
+    </td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Category', new_category_path %>

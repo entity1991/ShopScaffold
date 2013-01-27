@@ -1,7 +1,6 @@
-<div id="sidebar">
-  <% if signed_in? %>
-    Categorien
-  <% else %>
+<% if signed_in? %>
+<% else %>
+  <div id="sidebar">
     <div class="sidebar_box">
       <h3>Cart</h3>
       <div class="content">
@@ -15,5 +14,6 @@
       <div class="content">
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
+

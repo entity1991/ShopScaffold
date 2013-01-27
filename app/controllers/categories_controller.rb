@@ -1,12 +1,9 @@
 class CategoriesController < ApplicationController
 
+  before_filter :is_admin?
+
   def index
     @categories = Category.all
-  end
-
-  def show
-    @category = Category.find(params[:id])
-
   end
 
   def new
@@ -20,7 +17,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(params[:category])
     if @category.save
-      redirect_to @category, notice: 'Category was successfully created.'
+      redirect_to categories_path, notice: t('category_created')
     else
       render action: "new"
     end
@@ -29,7 +26,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update_attributes(params[:category])
-      redirect_to @category, notice: 'Category was successfully updated.'
+      redirect_to categories_path, notice: t('category_updated')
     else
       render action: "edit"
     end
@@ -38,7 +35,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    redirect_to categories_url
+    redirect_to categories_path
   end
 
 end

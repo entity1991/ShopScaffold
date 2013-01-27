@@ -22,6 +22,12 @@ ua:
   back: "Назад"
   product_created: "Продукт створено!"
   product_updated: "Продукт оновлено!"
+  Russian: "Російська"
+  Ukrainian: "Українска"
+  English: "Англійска"
+  categories: "Категорії"
+  category_created: "Категорію створено!"
+  category_updated: "Назву оновлено!"
 
   activerecord:
       attributes:
@@ -36,6 +42,8 @@ ua:
           price: "Ціна"
           category: "Категорія"
           image_content_type: "Вибраний файл"
+        category:
+          name: "Название"
       errors:
         models:
           user:
@@ -63,3 +71,7 @@ ua:
                 not_a_number: "не являеться числом"
               image_content_type:
                 invalid: "має неправильний формат. Потрібно вибрати картинку"
+          category:
+            attributes:
+              name:
+                blank: "не може бути пустим"
