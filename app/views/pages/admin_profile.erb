@@ -2,8 +2,6 @@
 
 <%= form_for @admin, url: admin_profile_path do |f|%>
   <div class="form_fields">
-    <%= f.label "Им'я" %><br>
-    <%= f.text_field :name%><br>
     <%= f.label "Почтовый адрес" %><br>
     <span class="field_notice">Имейте ввиду, что на даную почту будет отправлятся рассылка новых заказов!</span><br>
     <%= f.text_field :email%><br>

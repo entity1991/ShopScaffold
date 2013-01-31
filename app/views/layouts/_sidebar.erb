@@ -1,19 +1,9 @@
 <% if signed_in? %>
 <% else %>
   <div id="sidebar">
-    <div class="sidebar_box">
-      <h3>Cart</h3>
-      <div class="content">
-        <ul class="sidebar_list" id="cart">
-          <%= render @cart unless @cart.empty?%>
-        </ul>
-      </div>
-    </div>
-    <div class="sidebar_box">
-      <h3>Best Sellers </h3>
-      <div class="content">
-      </div>
-    </div>
+    <% @categories.each do |cat| %>
+      <%= link_to cat.name, "/catalog?category=#{cat.name}", class: "category_link" %>
+    <% end if @categories%>
   </div>
 <% end %>
 

@@ -7,6 +7,8 @@ ShopScaffold::Application.routes.draw do
   resources :carts
   resources :sessions,   :only   => [:new, :create, :destroy]
   resources :products,   :except => [:show]
+  resources :catalogs
+  match "/catalog", :to => "catalogs#index", :as => "catalog"
 
   post "/users/change_role"
   post "/sessions/change_locale", as: "locale"

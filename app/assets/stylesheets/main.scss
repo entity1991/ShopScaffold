@@ -21,6 +21,9 @@ h1, h2, h3, h4, h5, h6{
   font-weight: normal;
   color: #419639;
 }
+h1{
+  font-size: 1.5em;
+}
 
 html{min-height: 100%;}
 
@@ -32,14 +35,7 @@ body {
   cursor: default;
   position: relative;
   min-height: 100%;
-  background: rgb(40,40,40); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(40,40,40,1) 1%, rgba(69,72,77,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(40,40,40,1)), color-stop(100%,rgba(69,72,77,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(40,40,40,1) 1%,rgba(69,72,77,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(40,40,40,1) 1%,rgba(69,72,77,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(40,40,40,1) 1%,rgba(69,72,77,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(40,40,40,1) 1%,rgba(69,72,77,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282828', endColorstr='#45484d',GradientType=0 ); /* IE6-9 */
+  background: #fcfcfc;
 }
 
 a{
@@ -54,32 +50,13 @@ label{
   color: #328dbf;
 }
 
-table{
-  border: 1px solid #e1e1e1;
-  border-radius: 3px;
-  width: 100%;
-  border-collapse: collapse;
-  th{
-    background: -webkit-linear-gradient(top,#FAFAFA,#EFEFEF);
-    background: -moz-linear-gradient(top,#FAFAFA,#EFEFEF);
-    height: 30px;
-  }
-  tr{
-    background-color: white;
-    & td{
-      border: 1px solid #e1e1e1;
-      padding: 3px;
-    }
-  }
-}
-
 .file_wrapper{
   position: relative;
   height: 30px;
   width: 225px;
   overflow-x: visible;
   display: inline-block;
-  margin: 10px;
+  margin: 10px 3px;
   .file{
     opacity: 0;
     position: absolute;
@@ -90,7 +67,6 @@ table{
     cursor: pointer;
     height: 100%;
     width: 100px;
-    text-shadow: 1px 1px 0px #2a87a2;
     background: -webkit-linear-gradient(top, #5BC0DE, #328dbf);
     background: -moz-linear-gradient(top, #5BC0DE, #328dbf);
     border: none;
@@ -132,15 +108,17 @@ table{
     background-size: 85%;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 5px;
     &:hover{
-      color: white;
-      background-color: rgba(255, 255, 255, 0.14);
+      color: #2d6828;
+      background-color: rgba(194, 194, 194, 0.38);
     }
   }
   #admin_links{
     a{
-      color: #d1d1d1;
+      color: #555;
+      &:hover{
+        color: #333
+      }
     }
   }
 }
@@ -150,8 +128,8 @@ table{
   height: 40px;
   cursor: pointer;
   position: relative;
-  top: 137px;
-  left: 120px;
+  top: 155px;
+  left: 140px;
 }
 
 #signin_window{
@@ -163,8 +141,9 @@ table{
   top: -250px;
   padding: 10px;
   z-index: 50;
-  background-color: #ffffff;
-  opacity: 0.90;
+  background-color: #fff;
+  border: 1px solid #c3c3c3;
+  border-top: none;
   color: #004e76;
   h3{
     margin: 0;
@@ -185,37 +164,35 @@ table{
   width: 34%;
   .flash{
     padding: 5px;
-    color: #f9f9f9;
+    color: white;
     text-align: center;
-    border-top: none !important;
-    border-radius: 0 0 5px 5px;
-    margin-bottom: 3px;
     span{
       float: left;
       cursor: pointer;
       font-weight: bolder;
       font-size: 0.8em;
       padding-top: 0.1em;
-      background-color: rgba(132, 51, 48, 0.53);
       height: 1.5em;
-      width: 1.5em;
-      border-radius: 1em;
+      width: 1.6em;
       color: #e8e8e8;
     }
     &.success{
-      background-color: #51A351;
-      border: 2px solid #438543;
-      box-shadow: 0 0 2px #51A351;
+      background-color: rgba(81, 163, 81, 0.8);
+      span{
+        background-color: rgba(81, 163, 81, 1);
+      }
     }
     &.error{
-      background-color: #BD362F;
-      border: 2px solid #962b26;
-      box-shadow: 0 0 2px #BD362F;
+      background-color: rgba(189, 54, 47, 0.8);
+      span{
+        background-color: rgba(132, 51, 48, 0.8);
+      }
     }
     &.notice{
-      background-color: #2a87a2;
-      border: 2px solid #1e6174;
-      box-shadow: 0 0 2px #2a87a2;
+      background-color: rgba(42, 135, 162, 0.8);
+      span{
+        background-color: rgba(42, 135, 162, 1);
+      }
     }
   }
 }
@@ -223,15 +200,12 @@ table{
 #main {
   margin: 0 auto 20px;
   min-width: 970px;
-  width: 90%;
+  width: 100%;
   min-height: 500px;
-  border-radius: 12px;
-  background-color: white;
+  background-color: #f7f7f7;
   input{
     height: 30px;
-    box-shadow: 0px 1px 3px rgba(133, 133, 133, 0.80) inset;
     border: 1px solid #a3a3a3;
-    border-radius: 5px;
     padding: 5px;
     color: #444;
     margin-bottom: 7px;
@@ -244,7 +218,7 @@ table{
       text-shadow: 1px 1px 0px #499249;
       background: -webkit-linear-gradient(top, #62C462, #51A351);
       background: -moz-linear-gradient(top, #62C462, #51A351);
-      margin: 10px;
+      margin: 10px 3px;
       white-space: nowrap;
       cursor: pointer;
       font-size: 0.8em;
@@ -295,9 +269,7 @@ table{
   textarea{
     width: 100%;
     max-width: 100%;
-    box-shadow: 0px 1px 3px rgba(133, 133, 133, 0.80) inset;
     border: 1px solid #a3a3a3;
-    border-radius: 5px;
     padding: 5px;
     color: #444;
     margin-bottom: 7px;
@@ -307,7 +279,6 @@ table{
 #cap{
   height: 220px;
   width: 100%;
-  border-radius: 12px 12px 0 0;
   background: url("cap.jpg") no-repeat;
   background-size: cover;
   position: relative;
@@ -316,7 +287,7 @@ table{
     top: 10px;
     right: 10px;
     input[type=text]{
-      border-radius: 3px 0 0 3px;
+      border-radius: 0;
       border: none;
       outline: none;
       height: 25px;
@@ -341,7 +312,6 @@ table{
       background-size: 90%;
       border: none;
       cursor: pointer;
-      border-radius: 0 3px 3px 0;
     }
   }
 }
@@ -350,12 +320,24 @@ table{
   width: 20%;
   height: inherit;
   float: left;
-  background: url("leftsidebar_bg.jpg") repeat;
+  background-color: rgba(135, 178, 172, 0.06);
   display: block;
-  padding: 5px 5px 15px;
-  border-right: 1px solid #15609f;
-  border-radius: 0 0 0 12px;
-  .sidebar_box {
+  padding-top: 100px;
+  border-right: 1px solid #c6d3de;
+  a.category_link{
+    display: block;
+    color: #cccccc;
+    font-weight: bold;
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 15px;
+  }
+  a.category_link.active, a.category_link:hover{
+    border-bottom: 1px solid #eceff2;
+    color: white;
+    background-color: #5079ab;
+
   }
 }
 
@@ -371,9 +353,9 @@ table{
   padding: 5px;
   width: 95%;
   font-size: 80%;
-  color: #d3d3d3;
+  color: #333;
   a{
-    color: #d3d3d3;
+    color: #333;
     &:hover{
       text-decoration: underline;
     }
@@ -466,54 +448,46 @@ table{
 }
 
 #new_product, #new_category{
-  margin-top: -30px;
+  margin-top: -25px;
 }
 
-.admin_product{
-  padding: 10px 10px 15px;
-  min-height: 120px;
-  font-size: 0.95em;
-  &:nth-child(odd){
-    background-color: rgba(244, 244, 244, 0.99);
+table{
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  width: 100%;
+  border-collapse: collapse;
+  th{
+    background: -webkit-linear-gradient(top,#FAFAFA,#EFEFEF);
+    background: -moz-linear-gradient(top,#FAFAFA,#EFEFEF);
+    height: 30px;
   }
-  .image_wrapper{
-    float: left;
-    width: 120px;
-  }
-  .product_title{
-    font-weight: 700;
-    color: #333;
-    width: 70%;
-  }
-  .actions{
-    text-align: center;
-    font-size: 0.8em;
-    float: right;
-    a{
-      padding-top: 10px;
-      margin-left: 5px;
-      img{
-        height: 10px;
-        width: 10px;
-      }
+  tr{
+    background-color: white;
+    & td{
+      border: 1px solid #e1e1e1;
+      padding: 3px;
+      vertical-align: top;
+    }
+    .title{
+      font-size: 1.1em;
+      font-weight: 700;
+      color: #333;
+    }
+    .currency{
+      font-weight: bold;
+      color: #2e8b57;
+      text-align: right;
     }
   }
-  .product_price{
-    float: left;
-    color: #2e8b57;
-    font-weight: bold;
-  }
-  .product_desc{
-    float: left;
-    margin-top: -5px;
+  .admin_table_actions{
+    .edit_action:hover{
+      color: #13568f;
+    }
+    .delete_action:hover{
+      color: #ac312b;
+    }
   }
 }
 
-#category_actions{
-  #edit_category:hover{
-    color: #13568f;
-  }
-  #delete_category:hover{
-    color: #ac312b;
-  }
-}
+
+

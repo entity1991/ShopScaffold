@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  before_filter :is_admin?, :except => [:new, :create]
+
   def index
     @orders = Order.all
   end

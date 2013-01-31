@@ -76,3 +76,7 @@ ru:
               name:
                 blank: "не может быть пустым"
 
+  cart: "Корзина"
+  catalog: "Каталог"
+  invalid_email_password_combination: "Неправильно введеный логин или пароль. Кто вы?"
+  orders: "Заказы"

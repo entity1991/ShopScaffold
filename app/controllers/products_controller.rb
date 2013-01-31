@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_filter :is_admin?
+  before_filter :is_admin?, :except => :catalog
 
   def index
     @products = Product.all

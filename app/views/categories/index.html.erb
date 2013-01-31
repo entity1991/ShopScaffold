@@ -11,9 +11,9 @@
   <tr>
     <td><%= category.name %></td>
     <td width="250px"><%= category.products.length %></td>
-    <td width="250px" id="category_actions">
-      <%= link_to "Редагировать назавние", edit_category_path(category), id:"edit_category" %> или
-      <%= link_to "Удалить", category_path(category),  method: :delete, confirm: "Точно?", id: "delete_category" %>
+    <td width="250px" class="admin_table_actions">
+      <%= link_to "Редагировать назавние", edit_category_path(category), class: "edit_action" %> или
+      <%= link_to "Удалить", category_path(category),  method: :delete, confirm: "Точно?", class: "delete_action" %>
     </td>
   </tr>
 <% end %>

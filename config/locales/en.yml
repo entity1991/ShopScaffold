@@ -27,3 +27,7 @@ en:
   Urainian: "Ukrainian"
   English: "English"
   categories: "Categories"
+  cart: "Cart"
+  catalog: "Catalog"
+  invalid_email_password_combination: "Invalid Email/password combination. Are you admin?"
+  orders: "Orders"

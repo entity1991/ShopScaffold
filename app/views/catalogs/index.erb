@@ -1,0 +1,14 @@
+<% @products.each do |product| %>
+  <div class="admin_product cleaner">
+    <div class="image_wrapper">
+      <%= image_tag product.image.url :small  %>
+    </div>
+    <div class="content">
+      <h3 class="product_title"><%= product.title %></h3>
+
+      <span class="product_price"><%= number_to_currency(product.price, unit: "₴", precision: 2) %></span>
+      <br><br>
+      <%= product.description %>
+    </div>
+  </div>
+<% end %>

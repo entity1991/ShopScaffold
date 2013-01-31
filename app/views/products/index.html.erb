@@ -8,23 +8,26 @@
 <%= link_to "Создать новый товар", new_product_path, class: "button green float_right", id: "new_product" %>
 <br>
 <% if @products.present? %>
-  <% @products.each do |product| %>
-    <div class="admin_product cleaner">
-      <div class="image_wrapper">
-        <%= image_tag product.image.url :small  %>
-      </div>
-      <div class="content">
-        <h3 class="product_title"><%= product.title %></h3>
-        <div class="actions">
-          <%= link_to(image_tag("pencil.png"), edit_product_path(product), title: "Редагировать продукт") %>
-          <%= link_to(image_tag("delete.png"), product_path(product), method: :delete, confirm: "Точно?", title: "Удалить продукт") %>
-        </div>
-        <span class="product_price"><%= number_to_currency(product.price, unit: "₴", precision: 2) %></span>
-        <br><br>
-        <%= product.description %>
-      </div>
-    </div>
-  <% end %>
+  <table>
+    <tr>
+      <th>Картинка</th>
+      <th>Название</th>
+      <th>Описание</th>
+      <th>Цена</th>
+      <th>Действия</th>
+    </tr>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= image_tag product.image.url :small %></td>
+        <td class="title"><%= product.title %></td>
+        <td><%= product.description %></td>
+        <td class="currency"><%= "#{number_to_currency product.price, unit: ''} грн." %></td>
+        <td width="250px" class="admin_table_actions">
+          <%= link_to "Редагировать назавние", edit_category_path(product), class: "edit_action" %> или
+          <%= link_to "Удалить", product_path(product),  method: :delete, confirm: "Точно?", class: "delete_action" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 <% else %>
 <% end %>
-

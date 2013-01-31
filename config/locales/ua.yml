@@ -75,3 +75,7 @@ ua:
             attributes:
               name:
                 blank: "не може бути пустим"
+  cart: "Корзина"
+  catalog: "Каталог"
+  invalid_email_password_combination: "Неправильно введено лошін або пароль. Хто ви?"
+  orders: "Замовлення"
