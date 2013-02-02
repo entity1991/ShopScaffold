@@ -9,10 +9,10 @@
     <%= render 'layouts/header'%>
     <div id="main">
       <%= render 'layouts/cap' %>
-      <%= render 'layouts/sidebar' if @render_sidebar %>
       <div id="content">
         <%= yield %>
       </div>
+      <%= render 'layouts/sidebar' if @render_sidebar %>
       <div class="cleaner"></div>
     </div>
     <div class="cleaner"></div>

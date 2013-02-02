@@ -31,3 +31,5 @@ en:
   catalog: "Catalog"
   invalid_email_password_combination: "Invalid Email/password combination. Are you admin?"
   orders: "Orders"
+  grn: "grn."
+  details: "More"

@@ -47,10 +47,31 @@ j(document).ready(function(){
         j("#content").css("width", "100%");
     }
 
-    var content_height = parseInt(j("#content").css("height"));
-    if (content_height < 280) content_height = 260
-    sidebar_height = (content_height + 20).toString() + "px";
-    j("#sidebar").css("height", (parseInt(content_height) + 20).toString() + "px");
+    var main_height = parseInt(j("#main").css("height"));
+    var cap_height = parseInt(j("#cap").css("height"));
+    var sidebar_height = (main_height - cap_height).toString() + "px";
+    j("#sidebar").css("height", sidebar_height);
+
+    j(".product_image").click(function(){
+        var original_image_url = j(this).find("img").attr("src").split("?")[0].replace("medium", "original");
+        j("body").append("<div class='image_preview_wrapper'></div>");
+        j(".image_preview_wrapper").append("<img class='image_preview' src=" + original_image_url + "></img>");
+        var margin_left = ((window.innerWidth - parseInt(j(".image_preview").css("width")))/2).toString() + "px";
+        var margin_top = ((window.innerHeight - parseInt(j(".image_preview").css("height")))/2).toString() + "px";
+        j(".image_preview").css("margin-left", margin_left);
+        j(".image_preview").css("margin-top", margin_top);
+    });
+
+    j(".image_preview_wrapper").live("click", function(){
+        j(".image_preview_wrapper").remove();
+    });
+
+    j(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+            j(".image_preview_wrapper").remove();
+        }
+    });
+
 });
 
 //functions

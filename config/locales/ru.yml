@@ -28,6 +28,8 @@ ru:
   Ukrainian: "Украинский"
   English: "Английский"
   categories: "Категории"
+  grn: "грн."
+  details: "Подробнее"
 
   activerecord:
       attributes:

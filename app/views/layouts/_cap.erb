@@ -1,7 +1,7 @@
 <div id="cap">
-  <%= form_tag "/articles/index", id: "search_form" do %>
-    <%= text_field_tag :search, "", placeholder: t('search')%>
-    <%= submit_tag '', id: "search_submit", title: t('search')%>
+  <%= form_tag catalog_path, id: "search_form" do %>
+    <%= text_field_tag :search_value, "", placeholder: t('search')%>
+    <%= submit_tag '', id: "search_submit", title: t('search'), name: "search"%>
   <% end %>
   <% unless signed_in? %>
     <div id="signin_window_toggler"></div>

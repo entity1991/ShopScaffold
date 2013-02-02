@@ -28,6 +28,8 @@ ua:
   categories: "Категорії"
   category_created: "Категорію створено!"
   category_updated: "Назву оновлено!"
+  grn: "грн."
+  details: "Детальніше"
 
   activerecord:
       attributes:
