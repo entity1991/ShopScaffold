@@ -20,4 +20,8 @@ module ApplicationHelper
     (text.length < max_width) ? text : text.scan(regex).join(zero_width_space)
   end
 
+  def render_sidebar?
+    params[:controller] == "catalogs"
+  end
+
 end

@@ -81,3 +81,4 @@ ua:
   catalog: "Каталог"
   invalid_email_password_combination: "Неправильно введено лошін або пароль. Хто ви?"
   orders: "Замовлення"
+  add_to_cart: "В корзину"

@@ -82,3 +82,4 @@ ru:
   catalog: "Каталог"
   invalid_email_password_combination: "Неправильно введеный логин или пароль. Кто вы?"
   orders: "Заказы"
+  add_to_cart: "В корзину"

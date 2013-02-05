@@ -1,9 +1,6 @@
-<% if signed_in? %>
-<% else %>
-  <div id="sidebar">
-    <% @categories.each do |cat| %>
-      <%= link_to cat.name, "/catalog?category=#{cat.name}", class: "category_link" %>
-    <% end if @categories%>
-  </div>
-<% end %>
+<div id="sidebar">
+  <% @categories.each do |cat| %>
+    <%= link_to cat.name, "/catalog?category=#{cat.id}", class: "category_link #{"active" if params[:category] == cat.id.to_s}" %>
+  <% end if @categories%>
+</div>
 

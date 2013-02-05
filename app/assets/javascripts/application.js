@@ -56,10 +56,6 @@ j(document).ready(function(){
         var original_image_url = j(this).find("img").attr("src").split("?")[0].replace("medium", "original");
         j("body").append("<div class='image_preview_wrapper'></div>");
         j(".image_preview_wrapper").append("<img class='image_preview' src=" + original_image_url + "></img>");
-        var margin_left = ((window.innerWidth - parseInt(j(".image_preview").css("width")))/2).toString() + "px";
-        var margin_top = ((window.innerHeight - parseInt(j(".image_preview").css("height")))/2).toString() + "px";
-        j(".image_preview").css("margin-left", margin_left);
-        j(".image_preview").css("margin-top", margin_top);
     });
 
     j(".image_preview_wrapper").live("click", function(){
