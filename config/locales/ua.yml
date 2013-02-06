@@ -30,6 +30,8 @@ ua:
   category_updated: "Назву оновлено!"
   grn: "грн."
   details: "Детальніше"
+  totals: "Разом"
+  your_cart_is_currently_empty: "Корзина успішно очищена"
 
   activerecord:
       attributes:
@@ -82,3 +84,8 @@ ua:
   invalid_email_password_combination: "Неправильно введено лошін або пароль. Хто ви?"
   orders: "Замовлення"
   add_to_cart: "В корзину"
+  products_categories: "Категорії товарів"
+  cart_is_empty: "Корзина порожня"
+  checkout: "Заказати"
+  empty_cart: "Очистити"
+  are_you_sure: "Ви впевнені?"

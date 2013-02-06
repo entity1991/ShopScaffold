@@ -1,10 +1,11 @@
 ShopScaffold::Application.routes.draw do
 
-  root to: 'pages#home'
+  root to: 'catalogs#index'
 
   resources :categories, :except => [:show]
   resources :orders
   resources :carts
+  resources :line_items
   resources :sessions,   :only   => [:new, :create, :destroy]
   resources :products,   :except => [:show]
   resources :catalogs

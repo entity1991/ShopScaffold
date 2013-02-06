@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
                             :path => ":rails_root/public/product_images/:id/:style/:basename.:extension"
 
   validates :title,       :presence => true, :length => { :maximum => 30 }
-  validates :description, :presence => true, :length => { :maximum => 5000 }
+  validates :description, :presence => true
   validates :price,       :presence => true, :numericality => {greater_than_or_equal_to: 0.01}
 
   validates_attachment_size :image, :less_than => 10.megabytes

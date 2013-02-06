@@ -1,0 +1,13 @@
+<div class="show_product">
+  <div class="product_header">
+    <div class="back_to_index"><%= link_to t('back'), :back %></div>
+    <div class="product_title"><%= @product.title %></div>
+    <div class="product_price"><%= "#{to_grn @product.price}" %></div>
+  </div>
+  <div class="product_image">
+    <%= image_tag @product.image.url :medium%>
+    <div class="zoom_in"></div>
+  </div>
+  <div class="product_desc"><%= @product.description %></div>
+  <%= link_to t('add_to_cart'), "#", class: "add_to_cart" %>
+</div>

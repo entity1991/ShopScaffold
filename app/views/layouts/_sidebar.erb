@@ -1,6 +1,31 @@
 <div id="sidebar">
-  <% @categories.each do |cat| %>
-    <%= link_to cat.name, "/catalog?category=#{cat.id}", class: "category_link #{"active" if params[:category] == cat.id.to_s}" %>
-  <% end if @categories%>
+  <div class="sidebar_box">
+    <h3 class="sidebar_title"><%= t("products_categories") %></h3>
+    <% @categories.each do |cat| %>
+      <%= link_to raw(cat.name + "<span class='count'>#{cat.products.length}</span>"),
+                  "/catalog?category=#{cat.id}",
+                  class: "item #{"active" if params[:category] == cat.id.to_s}" %>
+    <% end if @categories%>
+  </div>
+
+  <div class="sidebar_box">
+    <% if @cart.empty? %>
+      <h3 class="sidebar_title"><%= t("cart_is_empty") %></h3>
+    <% else %>
+      <h3 class="sidebar_title"><%= t("cart") %></h3>
+      <% @cart.line_items.each do |item| %>
+        <a class="item" id="<%= "current_item" if item == @current_item %>" href="<%= product_path(item.product) %>">
+          <%= "#{cut item.title, 20} (#{item.quantity})" %>
+          <span class="count"><%= to_grn item.total_price %></span>
+        </a>
+      <% end %>
+      <div class="item cart_totals">
+        <%= "#{t('totals')} (#{@cart.total_quantity})" %>
+        <span class="count"><%= to_grn @cart.total_price %></span>
+      </div>
+      <%= button_to t('checkout'), new_order_path, method: :get, class: "button blue", style:"width: 45%; display:inline; float: right" %>
+      <%= button_to t('empty_cart'), @cart, method: :delete, confirm: t('are_you_sure'), class: "button transparent", style:"width: 45%; display:inline; float: left" %>
+    <% end %>
+  </div>
 </div>
 

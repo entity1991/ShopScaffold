@@ -1,19 +1,21 @@
 <div id="header">
-  <div class="float_left" id="admin_links">
-    <% if signed_in? %>
-      <%= link_to t('categories'), categories_path %>
-      <%= link_to t('products_list'), products_path %>
-      <%= link_to t('orders'), orders_path %>
-      <%= link_to t('profile'), admin_profile_path %>
-      <%= link_to t('sign_out'), signout_path, :method => :delete %>
-    <% else %>
-      <h3 style="margin: 40px 100px;">Your logo</h3>
-    <% end %>
-  </div>
-  <div class="float_right">
-    <%= link_to t('cart'), "#" %>
-    <%= link_to t('catalog'), catalog_path %>
-    <%= link_to t('categories'), "#" %>
+  <div style="margin-left: auto; margin-right: auto; width: 1100px;">
+    <div class="float_left" id="admin_links">
+      <% if signed_in? %>
+        <%= link_to t('categories'), categories_path %>
+        <%= link_to t('products_list'), products_path %>
+        <%= link_to t('orders'), orders_path %>
+        <%= link_to t('profile'), admin_profile_path %>
+        <%= link_to t('sign_out'), signout_path, :method => :delete %>
+      <% else %>
+        <h3 style="margin: 40px 100px;">Your logo</h3>
+      <% end %>
+    </div>
+    <div class="float_right">
+      <%= link_to t('cart'), "#" %>
+      <%= link_to t('catalog'), catalog_path %>
+      <%= link_to t('categories'), "#" %>
+    </div>
   </div>
 </div>
 

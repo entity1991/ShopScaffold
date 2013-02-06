@@ -30,6 +30,9 @@ ru:
   categories: "Категории"
   grn: "грн."
   details: "Подробнее"
+  totals: "Вместе"
+  your_cart_is_currently_empty: "Корзина успешно очищена"
+  are_you_sure: "Вы уверены?"
 
   activerecord:
       attributes:
@@ -83,3 +86,7 @@ ru:
   invalid_email_password_combination: "Неправильно введеный логин или пароль. Кто вы?"
   orders: "Заказы"
   add_to_cart: "В корзину"
+  products_categories: "Категории Товаров"
+  cart_is_empty: "Корзина пуста"
+  checkout: "Заказать"
+  empty_cart: "Очистить"
