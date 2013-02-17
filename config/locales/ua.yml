@@ -46,8 +46,14 @@ ua:
           price: "Ціна"
           category: "Категорія"
           image_content_type: "Вибраний файл"
+          image: "Картинка"
         category:
           name: "Название"
+        order:
+          email: "Email"
+          address: "Адреса"
+          name: "Імя"
+          phone: "Телефон"
       errors:
         models:
           user:
@@ -75,10 +81,18 @@ ua:
                 not_a_number: "не являеться числом"
               image_content_type:
                 invalid: "має неправильний формат. Потрібно вибрати картинку"
+              image:
+                blank: "обовязкова"
           category:
             attributes:
               name:
                 blank: "не може бути пустим"
+          order:
+            attributes:
+              name:
+                blank: "обовязкове"
+              email:
+                blank: "обовязковий"
   cart: "Корзина"
   catalog: "Каталог"
   invalid_email_password_combination: "Неправильно введено лошін або пароль. Хто ви?"
@@ -89,3 +103,8 @@ ua:
   checkout: "Заказати"
   empty_cart: "Очистити"
   are_you_sure: "Ви впевнені?"
+  remove_from_cart: "Видалити з корзини"
+  order: "Заказ"
+  place_order: "Оформлення заказу"
+  thank_you_for_you_order: "Дякуємо за заказ"
+

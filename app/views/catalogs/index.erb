@@ -13,7 +13,7 @@
       </div>
       <div class="product_desc"><%= cut product.description, 800 %></div>
       <%= link_to t('add_to_cart'), line_items_path(:product_id => product), :method => :post, :remote => true, :class => "add_to_cart" %>
-      <%= link_to t('details'), product_path(product), class: "product_details_link" %>
+      <%= link_to t('details'), our_product_path(product), class: "product_details_link" %>
     </div>
   <% end %>
   <%= will_paginate @products %>

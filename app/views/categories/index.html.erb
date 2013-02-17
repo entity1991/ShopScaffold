@@ -1,5 +1,5 @@
 <h1>Категории товаров</h1>
-<%= link_to 'Добавить новую категорию', new_category_path, class: "button green float_right", id: "new_category" %>
+<%= link_to 'Добавить новую категорию', new_category_path, class: "button blue float_right", id: "new_category" %>
 <br>
 <table>
   <tr>
@@ -12,7 +12,7 @@
     <td><%= category.name %></td>
     <td width="250px"><%= category.products.length %></td>
     <td width="250px" class="admin_table_actions">
-      <%= link_to "Редагировать назавние", edit_category_path(category), class: "edit_action" %> или
+      <%= link_to "Редагировать назавние", edit_category_path(category), class: "edit_action" %><br>
       <%= link_to "Удалить", category_path(category),  method: :delete, confirm: "Точно?", class: "delete_action" %>
     </td>
   </tr>

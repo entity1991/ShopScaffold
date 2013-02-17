@@ -3,10 +3,9 @@ class CartsController < ApplicationController
   def show
     begin
       @cart = Cart.find(params[:id])
+      @order = Order.new
     rescue ActiveRecord::RecordNotFound
-      logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to store_path, notice: 'Invalid cart'
-    else
+      redirect_to root_path, notice: 'Invalid cart'
     end
   end
 
@@ -14,7 +13,7 @@ class CartsController < ApplicationController
     @cart = current_cart
     @cart.destroy
     session[:cart_id] = nil
-    redirect_to :back, notice: t('your_cart_is_currently_empty')
+    redirect_to root_path, notice: t('your_cart_is_currently_empty')
   end
 
 end

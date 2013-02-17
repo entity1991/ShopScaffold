@@ -16,6 +16,14 @@ class LineItem < ActiveRecord::Base
     product.price
   end
 
+  def description
+    product.description
+  end
+
+  def image
+    product.image
+  end
+
 end
 
 

@@ -23,7 +23,7 @@ class PagesController < ApplicationController
     @admin = current_user
     if params[:change_admin_profile]
       if @admin.update_attributes params[:user]
-        redirect_to root_path, notice: t('settings_successfully_updated')
+        redirect_to products_path, notice: t('settings_successfully_updated')
       else
         render 'admin_profile'
       end

@@ -47,8 +47,14 @@ ru:
           price: "Цена"
           category: "Категория"
           image_content_type: "Выбраный файл"
+          image: "Картинка"
         category:
           name: "Название"
+        order:
+          name: "Имя"
+          address: "Адрес"
+          email: "Email"
+          phone: "Телефон"
       errors:
         models:
           user:
@@ -76,17 +82,28 @@ ru:
                 not_a_number: "не является числом"
               image_content_type:
                 invalid: "имеет неправильный формат. Нужно выбрать картинку"
+              image:
+                blank: "об'язательна"
           category:
             attributes:
               name:
                 blank: "не может быть пустым"
-
+          order:
+            attributes:
+              name:
+                blank: "обязательное"
+              email:
+                blank: "обязательный"
   cart: "Корзина"
   catalog: "Каталог"
   invalid_email_password_combination: "Неправильно введеный логин или пароль. Кто вы?"
   orders: "Заказы"
   add_to_cart: "В корзину"
   products_categories: "Категории Товаров"
-  cart_is_empty: "Корзина пуста"
+  cart_is_empty: "Корзина пустая"
   checkout: "Заказать"
   empty_cart: "Очистить"
+  remove_from_cart: "Удалить с корзины"
+  order: "Заказ"
+  place_order: "Оформление заказа"
+  thank_you_for_you_order: "Спасибо за заказ"

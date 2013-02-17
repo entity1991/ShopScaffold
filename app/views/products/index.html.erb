@@ -5,7 +5,7 @@
     У Вас пока нет ни одного продукта!
   <% end %>
 </h1>
-<%= link_to "Создать новый товар", new_product_path, class: "button green float_right", id: "new_product" %>
+<%= link_to "Создать новый товар", new_product_path, class: "button blue float_right", id: "new_product" %>
 <br>
 <% if @products.present? %>
   <table>
@@ -14,6 +14,7 @@
       <th>Название</th>
       <th>Описание</th>
       <th>Цена</th>
+      <th>Категория</th>
       <th>Действия</th>
     </tr>
     <% @products.each do |product| %>
@@ -22,9 +23,10 @@
         <td class="title"><%= product.title %></td>
         <td><%= product.description %></td>
         <td class="currency"><%= "#{number_to_currency product.price, unit: ''} грн." %></td>
+        <td><%= product.category ? product.category.name : "Нету" %></td>
         <td width="250px" class="admin_table_actions">
-          <%= link_to "Редагировать назавние", edit_category_path(product), class: "edit_action" %> или
-          <%= link_to "Удалить", product_path(product),  method: :delete, confirm: "Точно?", class: "delete_action" %>
+          <%= link_to "Редагировать", edit_product_path(product), class: "edit_action" %><br>
+          <%= link_to "Удалить", our_product_path(product),  method: :delete, confirm: "Точно?", class: "delete_action" %>
         </td>
       </tr>
     <% end %>

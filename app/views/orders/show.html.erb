@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <b>Name:</b>
+  <b>Имя:</b>
   <%= @order.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>Адрес:</b>
   <%= @order.address %>
 </p>
 
@@ -16,10 +14,11 @@
 </p>
 
 <p>
-  <b>Pay type:</b>
-  <%= @order.pay_type %>
+  <b>Телефон:</b>
+  <%= @order.phone %>
+</p>
+<p>
+  <b>Заказаные товаы:</b>
+  <%= @order.email %>
 </p>
 
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>

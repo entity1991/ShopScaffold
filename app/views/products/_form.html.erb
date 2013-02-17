@@ -11,7 +11,8 @@
     <br>
     <%= f.label "Категория" %><br >
     <%= f.collection_select :category_id, @categories, :id, :name if @categories %>
-    <br><br>
+    <br>
+    <%= image_tag @product.image.url :medium unless @product.image_file_name.nil? %><br>
     <%= f.file_field :image, class: "with_file_name_label" %><br>
     <%= submit_tag "ГОТОВО" %>
   </div>

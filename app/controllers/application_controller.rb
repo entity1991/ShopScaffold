@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_filter :set_i18n_locale_from_session,  :cart
+  before_filter :set_i18n_locale_from_session,  :cart, :new_orders_count
 
   protect_from_forgery
 
@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def cart
-    @cart = current_cart
+    @cart ||= current_cart
   end
 
   def current_cart
@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     cart = Cart.create
     session[:cart_id] = cart.id
     cart
+  end
+
+  def new_orders_count
+    @new_orders_count = Order.where(:new => true).count
   end
 
   private

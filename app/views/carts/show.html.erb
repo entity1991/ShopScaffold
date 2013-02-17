@@ -1,1 +1,45 @@
-<%= render @cart %>
+<div id="cart">
+  <% if @cart.empty? %>
+    <h1 class="header center"><%= t("cart_is_empty") %></h1>
+  <% else %>
+    <h1 class="header center">
+      <%= link_to t('empty_cart'), @cart, method: :delete, confirm: t('are_you_sure'), id: "empty_cart" %>
+      <%= t("cart") %>
+      <span class="float_right"><%= "#{to_grn @cart.total_price}" %></span>
+    </h1>
+    <div id="products_list">
+      <% @cart.line_items.each do |item| %>
+        <div class="show_product">
+          <div class="product_header">
+            <div class="product_title"><%= item.title %></div>
+            <div class="product_price"><%= "#{item.quantity} x #{to_grn item.price}" %></div>
+          </div>
+          <div class="image">
+            <%= image_tag item.image.url :small%>
+          </div>
+          <div class="product_desc"><%= item.description %></div>
+          <%= link_to t('remove_from_cart'), line_item_path(item), :method => :delete, :class => "remove_from_cart" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="order">
+      <h1 class="order_title"><%= t('place_order') %></h1>
+      <%= form_for(@order) do |f| %>
+        <%= render 'shared/error_messages', :object => f.object %>
+        <%= f.label :name %><br>
+        <%= f.text_field :name, size: 40 %><br>
+        <%= f.label :address %><br>
+        <%= f.text_area :address, rows: 6 %><br>
+        <%= f.label :email %><br>
+        <%= f.text_field :email, size: 40 %><br>
+        <%= f.label :phone %><br>
+        <%= f.text_field :phone, size: 40 %><br>
+        <div class="actions">
+          <%= f.submit  t('checkout'), :class => "button blue"%>
+        </div>
+      <% end %>
+    </div>
+    <div class="cleaner"></div>
+  <% end %>
+</div>

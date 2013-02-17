@@ -1,9 +1,8 @@
-<h3>Настройки профиля</h3>
+<h3 style="margin: 10px;">Настройки профиля</h3>
 
 <%= form_for @admin, url: admin_profile_path do |f|%>
   <div class="form_fields">
     <%= f.label "Почтовый адрес" %><br>
-    <span class="field_notice">Имейте ввиду, что на даную почту будет отправлятся рассылка новых заказов!</span><br>
     <%= f.text_field :email%><br>
     <%= f.label "Пароль" %><br>
     <%= f.password_field :password%><br>

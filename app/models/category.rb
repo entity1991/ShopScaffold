@@ -5,6 +5,7 @@ class Category < ActiveRecord::Base
 
   validates_presence_of :name
   validates :name, :length => { :maximum => 25 }
+  validates_uniqueness_of :name
 
 end
 

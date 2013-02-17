@@ -17,9 +17,9 @@
     <td><%= order.email %></td>
     <td><%= order.phone %></td>
     <td><%= "Список товаров и их количество" %></td>
-    <td>
-      <%= link_to 'Show', order %>
-      <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <td class="admin_table_actions">
+      <%= link_to 'Посмотреть', order, class: "edit_action" %><br>
+      <%= link_to 'Удалить из списка', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_action" %>
     </td>
   </tr>
 <% end %>
