@@ -8,22 +8,12 @@ development:
   password: "1111"
   host: localhost
 
-test:
-  adapter: mysql
-  encoding: utf8
-  reconnect: false
-  database: shop_scaffold_test
-  pool: 5
-  username: root
-  password: 1111
-  host: localhost
-
 production:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: shop_scaffold_production
+  database: shop_scaffold_d
   pool: 5
   username: root
-  password: 1111
+  password: "1111"
   host: localhost
