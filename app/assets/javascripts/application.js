@@ -19,7 +19,7 @@ j(document).ready(function(){
     //file input wrapping
     j("input[type=file]").wrap("<div class='file_wrapper'></div>").after("<button>Выберите картинку</button><span class='just_uploaded_file_name'></span>");
     j("input[type=file]").wrap("<div class='file'></div>");
-    j("input[type=file].with_file_name_label").live("change", function(){
+    j("input[type=file].with_file_name_label").change(function(){
         if(j(this).val() == ""){
             j(this).parents(".file_wrapper").find(".just_uploaded_file_name").html("");
         } else{
