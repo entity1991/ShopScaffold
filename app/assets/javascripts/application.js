@@ -58,7 +58,7 @@ j(document).ready(function(){
         j(".image_preview_wrapper").append("<img class='image_preview' src=" + original_image_url + "></img>");
     });
 
-    j(".image_preview_wrapper").live("click", function(){
+    j(".image_preview_wrapper").click(function(){
         j(".image_preview_wrapper").remove();
     });
 
