@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_many :orders, through: :line_items
 
-  attr_accessible :description, :title, :price, :category_id, :image
+  attr_accessible :description, :title, :price, :category_id, :image, :archived
 
   has_attached_file :image, :styles => {:small => "100x100>", :medium => "250x250>" },
                             :url  => "/product_images/:id/:style/:basename.:extension",
@@ -15,7 +15,16 @@ class Product < ActiveRecord::Base
 
   validates_attachment_presence :image
   validates_attachment_size :image, :less_than => 10.megabytes
-  validates_attachment_content_type :image, :content_type => %w(image/jpeg image/png image/jpg)
+  validates_attachment_content_type :image, :content_type => %w(image/jpeg image/png image/jpg image/gif)
 
   default_scope :order => 'created_at DESC'
+
+  def self.paginate_with_conditions(per_page=10, page=1, conditions=nil)
+    paginate :per_page => per_page, :page => page, :conditions => conditions
+  end
+
+  def exist_in_order?
+    not LineItem.where(:product_id => id).nil?
+  end
+
 end

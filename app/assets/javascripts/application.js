@@ -54,12 +54,8 @@ j(document).ready(function(){
 
     j(".product_image").click(function(){
         var original_image_url = j(this).find("img").attr("src").split("?")[0].replace("medium", "original");
-        j("body").append("<div class='image_preview_wrapper'></div>");
+        j("body").append("<div class='image_preview_wrapper' onclick='j(this).remove();'></div>");
         j(".image_preview_wrapper").append("<img class='image_preview' src=" + original_image_url + "></img>");
-    });
-
-    j(".image_preview_wrapper").click(function(){
-        j(".image_preview_wrapper").remove();
     });
 
     j(document).keyup(function(e) {

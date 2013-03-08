@@ -106,5 +106,6 @@ ua:
   remove_from_cart: "Видалити з корзини"
   order: "Заказ"
   place_order: "Оформлення заказу"
-  thank_you_for_you_order: "Дякуємо за заказ"
+  thank_you_for_your_order: "Дякуємо за заказ"
 
+  invalid_cart: "Корзини не існує"

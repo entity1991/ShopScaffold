@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
       redirect_to root_path, :notice => t('thank_you_for_your_order')
     else
       @cart = current_cart
-      render "carts/show"
+      render 'carts/show'
     end
   end
 

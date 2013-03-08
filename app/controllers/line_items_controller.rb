@@ -9,7 +9,7 @@ class LineItemsController < ApplicationController
         format.html { redirect_to :back }
         format.js {  @current_item = @line_item}
       else
-        format.html { render action: "new" }
+        render :new
       end
     end
   end

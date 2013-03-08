@@ -3,13 +3,13 @@ class CatalogsController < ApplicationController
   before_filter :categories
 
   def index
-    @products = Product.paginate :per_page => 10, :page => (params[:page] or 1)
+    @products = Product.paginate_with_conditions
     if params[:category]
       category = Category.find(params[:category])
-      @products = Product.paginate :per_page => 10, :page => (params[:page] or 1), :conditions => ['category_id like ?', "%#{category.id}%"]
+      @products = Product.paginate_with_conditions 10, 1, ['category_id like ?', "%#{category.id}%"]
     end
     if params[:search]
-      @products = Product.paginate :per_page => 10, :page => (params[:page] or 1), :conditions => ["title LIKE ? or description LIKE ?", "%#{params[:search_value]}%", "%#{params[:search_value]}%"]
+      @products = Product.paginate_with_conditions 10, 1, ["title LIKE ? or description LIKE ?", "%#{params[:search_value]}%", "%#{params[:search_value]}%"]
     end
   end
 

@@ -47,4 +47,5 @@ en:
   address: "Address"
   name: "Name"
   email: "Email"
-  thank_you_for_you_order: "Thank You for your order"
+  thank_you_for_your_order: "Thank You for your order"
+  invalid_cart: "Invalid cart"

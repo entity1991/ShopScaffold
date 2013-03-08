@@ -15,21 +15,19 @@
       <th>Описание</th>
       <th>Цена</th>
       <th>Категория</th>
-      <th>Действия</th>
+      <th></th>
     </tr>
     <% @products.each do |product| %>
-      <tr>
+      <tr onclick="window.location = '<%= edit_product_url(product) %>'">
         <td><%= image_tag product.image.url :small %></td>
         <td class="title"><%= product.title %></td>
         <td><%= product.description %></td>
         <td class="currency"><%= "#{number_to_currency product.price, unit: ''} грн." %></td>
         <td><%= product.category ? product.category.name : "Нету" %></td>
         <td width="250px" class="admin_table_actions">
-          <%= link_to "Редагировать", edit_product_path(product), class: "edit_action" %><br>
-          <%= link_to "Удалить", our_product_path(product),  method: :delete, confirm: "Точно?", class: "delete_action" %>
+          <%= link_to "Удалить", product_path(product), :method => :delete, confirm: "Точно?", class: "delete_action" %>
         </td>
       </tr>
     <% end %>
   </table>
-<% else %>
 <% end %>

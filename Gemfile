@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'jquery-rails'
-gem 'rails', '3.2.8'
+gem 'rails'
 gem 'mysql2'
 gem 'i18n'
 gem 'paperclip'

@@ -5,7 +5,7 @@ class CartsController < ApplicationController
       @cart = Cart.find(params[:id])
       @order = Order.new
     rescue ActiveRecord::RecordNotFound
-      redirect_to root_path, notice: 'Invalid cart'
+      redirect_to root_path, :notice => t('invalid_cart')
     end
   end
 

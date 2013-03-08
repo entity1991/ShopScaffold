@@ -498,13 +498,21 @@ table{
     background: -webkit-linear-gradient(top,#FAFAFA,#EFEFEF);
     background: -moz-linear-gradient(top,#FAFAFA,#EFEFEF);
     height: 30px;
+    text-align: left;
+    padding-left: 3px;
   }
   tr{
     background-color: white;
+    cursor: pointer;
     & td{
-      border: 1px solid #e1e1e1;
       padding: 3px;
       vertical-align: top;
+    }
+    &:nth-child(2n+1){
+      background-color: #f4f4f4;
+    }
+    &:hover{
+      background-color: rgba(13, 114, 212, 0.16);
     }
     .title{
       font-size: 1.1em;
@@ -516,6 +524,9 @@ table{
       color: #2e8b57;
       text-align: right;
       min-width: 95px;
+    }
+    &.new{
+      background-color: #349d62;
     }
   }
   .admin_table_actions{
@@ -630,7 +641,7 @@ table{
   width: 100%;
   background-color: rgba(92, 92, 92, 0.72);
   .image_preview{
-    margin: 150px auto auto auto;
+    margin: 100px auto auto auto;
     display: block;
     border: 15px solid rgba(245, 245, 245, 0.83);
     border-radius: 10px;

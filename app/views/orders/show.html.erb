@@ -17,8 +17,14 @@
   <b>Телефон:</b>
   <%= @order.phone %>
 </p>
-<p>
-  <b>Заказаные товаы:</b>
-  <%= @order.email %>
-</p>
+<b>Заказаные товаы:</b><br>
+<% @order.line_items.each do |item| %>
+  <a class="item" href="<%= product_path(item.product) %>">
+    <%= "#{cut item.title, 20} (#{item.quantity})" %>
+    <span class="count"><%= to_grn item.total_price %></span>
+  </a><br>
+<% end %>
+<div class="item cart_totals">
+  Общая сумма: <span class="count"><%= to_grn @order.total_price %></span>
+</div>
 

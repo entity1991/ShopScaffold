@@ -1,26 +1,24 @@
 <h1>Ваши заказы</h1>
 
-<table>
+<table class="index">
   <tr>
     <th>Имя</th>
     <th>Адресса</th>
     <th>Ел. Почта</th>
     <th>Телефон</th>
-    <th>Товары</th>
-    <th>Действия</th>
+    <th>Сумма</th>
+    <th></th>
   </tr>
 
 <% @orders.each do |order| %>
-  <tr>
-    <td><%= order.name %></td>
-    <td><%= order.address %></td>
-    <td><%= order.email %></td>
-    <td><%= order.phone %></td>
-    <td><%= "Список товаров и их количество" %></td>
-    <td class="admin_table_actions">
-      <%= link_to 'Посмотреть', order, class: "edit_action" %><br>
-      <%= link_to 'Удалить из списка', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_action" %>
-    </td>
-  </tr>
+    <tr onclick="window.location = '<%= order_url(order) %>'" <%= raw "class='new'" if order.new? %>>
+      <td><%= order.name %></td>
+      <td><%= order.address %></td>
+      <td><%= order.email %></td>
+      <td><%= order.phone %></td>
+      <td><%= to_grn order.total_price %></td>
+      <td class="admin_table_actions">
+        <%= order.new? ? 'Новый заказ' : link_to('Удалить', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_action") %></td>
+    </tr>
 <% end %>
 </table>

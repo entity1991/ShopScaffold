@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def title
-    base_title = "Some title"
+    base_title = 'Hunter-optica'
     @title.nil? ? base_title : "#{base_title} | #@title"
   end
 
@@ -17,7 +17,7 @@ module ApplicationHelper
   end
 
   def render_sidebar?
-    params[:controller] == "catalogs"
+    params[:controller] == 'catalogs'
   end
 
   def to_grn(price)

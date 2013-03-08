@@ -5,16 +5,13 @@
   <tr>
     <th>Категория</th>
     <th>Количество товаров</th>
-    <th>Действия</th>
+    <th></th>
   </tr>
 <% @categories.each do |category| %>
-  <tr>
+  <tr onclick="window.location = '<%= edit_category_url(category) %>'">
     <td><%= category.name %></td>
     <td width="250px"><%= category.products.length %></td>
-    <td width="250px" class="admin_table_actions">
-      <%= link_to "Редагировать назавние", edit_category_path(category), class: "edit_action" %><br>
-      <%= link_to "Удалить", category_path(category),  method: :delete, confirm: "Точно?", class: "delete_action" %>
-    </td>
+    <td width="250px" class="admin_table_actions"><%= link_to "Удалить", category_path(category),  method: :delete, confirm: "Точно?", class: "delete_action" %></td>
   </tr>
 <% end %>
 </table>

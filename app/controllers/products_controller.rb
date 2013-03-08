@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
       redirect_to products_path
     else
       @categories = Category.all
-      render 'new'
+      render :new
     end
   end
 
@@ -32,13 +32,13 @@ class ProductsController < ApplicationController
     if @product.update_attributes(params[:product])
       redirect_to products_path, :notice => t('product_updated')
     else
-      render :action => "edit"
+      render :edit
     end
   end
 
   def destroy
     @product = Product.find params[:id]
-    @product.destroy
+    @product.exist_in_order? ? @product.update_attribute(:archived, true) : @product.destroy
     redirect_to :back
   end
 

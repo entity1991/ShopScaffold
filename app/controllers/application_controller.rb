@@ -1,9 +1,7 @@
 class ApplicationController < ActionController::Base
 
   before_filter :set_i18n_locale_from_session,  :cart, :new_orders_count
-
   protect_from_forgery
-
   include ApplicationHelper
   include SessionsHelper
 
@@ -14,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_cart
-    Cart.find(session[:cart_id])
+    Cart.find session[:cart_id]
   rescue ActiveRecord::RecordNotFound
     cart = Cart.create
     session[:cart_id] = cart.id
@@ -38,7 +36,7 @@ class ApplicationController < ActionController::Base
       if I18n.available_locales.include?(session[:locale].to_sym)
         I18n.locale = session[:locale]
       else
-        flash.now[:notice] = session[:locale] + " translation not available"
+        flash.now[:notice] = session[:locale] + ' translation not available'
         logger.error flash.now[:notice]
       end
     end
