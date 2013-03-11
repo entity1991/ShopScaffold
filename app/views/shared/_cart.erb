@@ -13,5 +13,5 @@
     <span class="count"><%= to_grn @cart.total_price %></span>
   </div>
   <%= button_to t('checkout'), cart_path(@cart), method: :get, class: "button blue", style:"width: 45%; display:inline; float: right" %>
-  <%= button_to t('empty_cart'), @cart, method: :delete, confirm: t('are_you_sure'), class: "button transparent", style:"width: 45%; display:inline; float: left" %>
+  <%= button_to t('empty_cart'), @cart, method: :delete, confirm: t('are_you_sure'), class: "button blue", style:"width: 45%; display:inline; float: left" %>
 <% end %>

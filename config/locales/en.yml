@@ -49,3 +49,7 @@ en:
   email: "Email"
   thank_you_for_your_order: "Thank You for your order"
   invalid_cart: "Invalid cart"
+  feedback: "Feedback"
+  thanks_for_addressing: "Thanks for addressing!"
+  your_message: "Your message"
+  phone_mail_address: "Phone/Mail/Address"

@@ -1,19 +1,21 @@
 <div id="header">
   <div style="margin-left: auto; margin-right: auto; width: 1100px;">
+    <% if signed_in? %>
     <div class="float_left" id="admin_links">
-      <% if signed_in? %>
-        <%= link_to t('categories'), categories_path %>
-        <%= link_to t('products_list'), products_path %>
-        <%= link_to(t('orders') + " (#{@new_orders_count.to_s})", orders_path) %>
-        <%= link_to t('profile'), admin_profile_path %>
-        <%= link_to t('sign_out'), signout_path, :method => :delete %>
-      <% else %>
-      <% end %>
+      <%= link_to "Сообщения", feedbacks_path %>
+      <%= link_to(t('orders') + " (#{@new_orders_count.to_s})", orders_path) %>
+      <%= link_to t('categories'), categories_path %>
+      <%= link_to t('products_list'), products_path %>
+      <%= link_to t('profile'), admin_profile_path %>
+      <%= link_to t('sign_out'), signout_path, :method => :delete %>
     </div>
-    <div class="float_right">
-      <%= link_to t('cart'), cart_path(@cart) %>
-      <%= link_to t('catalog'), catalog_path %>
-    </div>
+    <% else %>
+      <div class="float_right">
+        <%= link_to t('feedback'), new_feedback_path %>
+        <%= link_to t('cart'), cart_path(@cart) %>
+        <%= link_to t('catalog'), catalog_path %>
+      </div>
+    <% end %>
   </div>
 </div>
 

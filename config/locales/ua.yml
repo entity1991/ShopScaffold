@@ -54,6 +54,9 @@ ua:
           address: "Адреса"
           name: "Імя"
           phone: "Телефон"
+        feedback:
+          content: "Контент"
+          address: "Ваши дані"
       errors:
         models:
           user:
@@ -93,6 +96,12 @@ ua:
                 blank: "обовязкове"
               email:
                 blank: "обовязковий"
+          feedback:
+            attributes:
+              content:
+                blank: "обовязковий"
+              address:
+                blank: "обовязковий"
   cart: "Корзина"
   catalog: "Каталог"
   invalid_email_password_combination: "Неправильно введено лошін або пароль. Хто ви?"
@@ -109,3 +118,7 @@ ua:
   thank_you_for_your_order: "Дякуємо за заказ"
 
   invalid_cart: "Корзини не існує"
+  feedback: "Зворотній звязок"
+  thanks_for_addressing: "Дякуємо за зверенення!"
+  your_message: "Ваше повідомлення"
+  phone_mail_address: "Телефон/Email/Адреса"

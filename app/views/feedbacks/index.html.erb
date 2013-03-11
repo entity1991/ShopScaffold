@@ -1,0 +1,27 @@
+<h1>
+  <% if @feedbacks.length > 0 %>
+    Список всех сообщений (<%= @feedbacks.length %>)
+  <% else %>
+    У Вас нет ни одного сообщения!
+  <% end %>
+</h1>
+<% if @feedbacks.present? %>
+  <table>
+    <tr>
+      <th>Контакты</th>
+      <th>Контент</th>
+      <th>Дата</th>
+      <th></th>
+    </tr>
+    <% @feedbacks.each do |feedback| %>
+      <tr>
+        <td><%= feedback.address %></td>
+        <td class="title"><%= feedback.content %></td>
+        <td><%= feedback.created_at %></td>
+        <td width="250px" class="admin_table_actions">
+          <%= link_to "Удалить", feedback_path(feedback), :method => :delete, confirm: "Точно?", class: "delete_action" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

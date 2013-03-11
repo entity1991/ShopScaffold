@@ -2,10 +2,6 @@ class PagesController < ApplicationController
 
   before_filter :is_admin?, only: :admin_profile
 
-  def contact
-    @title = "Contact"
-  end
-
   def admin_profile
     @render_sidebar = false
     @admin = current_user

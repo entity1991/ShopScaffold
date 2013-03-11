@@ -1,6 +1,6 @@
 <div class="show_product">
   <div class="product_header">
-    <div class="back_to_index"></div>
+    <%= link_to t('add_to_cart'), line_items_path(:product_id => @product), :method => :post, :remote => true, :class => "add_to_cart" %>
     <div class="product_title"><%= @product.title %></div>
     <div class="product_price"><%= "#{to_grn @product.price}" %></div>
   </div>
@@ -9,5 +9,4 @@
     <div class="zoom_in"></div>
   </div>
   <div class="product_desc"><%= @product.description %></div>
-  <%= link_to t('add_to_cart'), line_items_path(:product_id => @product), :method => :post, :remote => true, :class => "add_to_cart" %>
 </div>

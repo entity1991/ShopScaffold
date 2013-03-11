@@ -55,6 +55,9 @@ ru:
           address: "Адрес"
           email: "Email"
           phone: "Телефон"
+        feedback:
+          content: "Контент"
+          address: "Ваши данные"
       errors:
         models:
           user:
@@ -94,6 +97,12 @@ ru:
                 blank: "обязательное"
               email:
                 blank: "обязательный"
+          feedback:
+            attributes:
+              content:
+                blank: "обязательный"
+              address:
+                blank: "обязательный"
   cart: "Корзина"
   catalog: "Каталог"
   invalid_email_password_combination: "Неправильно введеный логин или пароль. Кто вы?"
@@ -108,3 +117,7 @@ ru:
   place_order: "Оформление заказа"
   thank_you_for_your_order: "Спасибо за заказ"
   invalid_cart: "Корзини не существует"
+  feedback: "Обратная связь"
+  thanks_for_addressing: "Спосибо за обращение!"
+  your_message: "Ваше сообщение"
+  phone_mail_address: "Телефон/Email/Адресс"

@@ -1,0 +1,14 @@
+<%= form_for @feedback do |f| %>
+    <div class="with_border"><div><%= t('your_message') %></div></div>
+    <div class="form_fields">
+      <%= f.text_area :content %>
+      <br>
+      <%= f.label t('phone_mail_address') %><br>
+      <%= f.text_field :address %>
+      <br>
+      <%= f.submit 'OK', class: 'button blue'%>
+    </div>
+    <div class="form_errors">
+      <%= render 'shared/error_messages', :object => f.object %>
+    </div>
+<% end %>
